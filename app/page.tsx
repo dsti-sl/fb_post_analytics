@@ -25,11 +25,22 @@ export default function Dashboard() {
           bgColor="#ffffff"
         />
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <Cards label="Total Comments" value={10790} bgColor="#1c1f42" textColor="white" />
-          <Cards label="Total Reactions" value={5500} bgColor="#2a2b50" textColor="white" />
-          <Cards label="Sub Comments" value={1200} bgColor="#38395f" textColor="white" />
+        {/* Stat Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <Cards label="Total Comments" value={10790} bgColor="#20223d" />
+          <Cards label="Total Reactions" value={5500} bgColor="#20223d" />
+          <Cards label="Sub Comments" value={1200} bgColor="#20223d" />
+        </div>
+
+        {/* Winner Card - full width but reduced height */}
+        <div className="mb-10">
+          <div className="w-full rounded-2xl shadow-lg px-6 py-6 text-center bg-[#20223d] text-yellow-400 border border-yellow-500">
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <p className="text-4xl leading-none">🏅</p>
+              <p className="text-xl font-bold uppercase tracking-wide">Winner</p>
+              <p className="text-base italic text-yellow-300">Iyeba Alpha Kallon</p>
+            </div>
+          </div>
         </div>
 
         {/* Charts */}
@@ -76,8 +87,8 @@ export default function Dashboard() {
       </div>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-black-500 py-4 bg-gray-200">
-        <p>Powered by DSTI © 2025 | dsti.gov.sl</p>
+      <footer className="text-center text-sm text-black py-4 bg-gray-200 border-t border-gray-300">
+        <p>© 2025 DSTI. All rights reserved.</p>
       </footer>
 
     </div>
