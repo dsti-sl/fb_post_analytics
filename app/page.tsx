@@ -1,96 +1,149 @@
-import Section from "../components/section";
-import Cards from "../components/cards";
+import Section from "@/components/Section";
+import Cards from "@/components/Cards";
+import WinnerSection from "@/components/WinnerSection";
+import Charts from "@/components/Charts";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Header */}
+      <Header />
 
       {/* Main content */}
-      <div className="flex-1 max-w-6xl mx-auto px-4 py-10">
-
-        {/* Title */}
-        <header className="mb-10 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#1c1f42] mb-2">
-            Kush Free Future
-          </h1>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Engagement Dashboard
-          </p>
-        </header>
-
-        {/* Overview */}
-        <Section
-          title="Overview"
-          description="The Chief Minister launched a community challenge to create a #KushFreeFuture. Submissions were collected and analyzed based on engagement, impact, and replies."
-          bgColor="#ffffff"
-        />
-
-        {/* Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          <Cards label="Total Comments" value={10790} bgColor="#20223d" />
-          <Cards label="Total Reactions" value={5500} bgColor="#20223d" />
-          <Cards label="Sub Comments" value={1200} bgColor="#20223d" />
-        </div>
-
-        {/* Winner Card - full width but reduced height */}
-        <div className="mb-10">
-          <div className="w-full rounded-2xl shadow-lg px-6 py-6 text-center bg-[#20223d] text-yellow-400 border border-yellow-500">
-            <div className="flex flex-col items-center justify-center space-y-1">
-              <p className="text-4xl leading-none">🏅</p>
-              <p className="text-xl font-bold uppercase tracking-wide">Winner</p>
-              <p className="text-base italic text-yellow-300">Iyeba Alpha Kallon</p>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-[#1c1f42] to-[#2d1b69] text-white py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+                #KushFreeFuture
+              </h1>
+              <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+                Community Engagement Dashboard & Analytics
+              </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Charts */}
-        <Section
-          title="Comments per Day"
-          description="Trend of daily comments"
-          imageSrc="/images/reactions_old.png"
-          explanation="Shows the daily comment activity for all posts in the community challenge."
-          bgColor="#ffffff"
-        />
+        {/* Overview Section */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Section
+              title="Campaign Overview"
+              description="The Chief Minister launched a community challenge to create a #KushFreeFuture. Submissions were collected and analyzed based on engagement, impact, and replies to identify the most influential content creators."
+              imageSrc="/images/sub-header.jpg"
+              bgColor="#ffffff"
+            />
+          </div>
+        </section>
 
-        {/* Top Authors */}
-        <Section
-          title="Top 5 Most Engaging Authors"
-          description="Based on engagement rate and interactions"
-          explanation="This image shows the top 5 authors with the highest engagement, including replies and reactions."
-          bgColor="#ffffff"
-          imageSrc="/images/reactions_old.png"
-        />
+        {/* Stats Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Campaign Performance
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Key metrics showing the overall impact and engagement of the
+                #KushFreeFuture campaign
+              </p>
+            </div>
 
-        {/* Analytics Sections */}
-        {[
-          { title: "Reaction Count per Author", src: "/images/reactions_old.png", explanation: "Shows the number of reactions each author received." },
-          { title: "Replies Count per Author", src: "/images/reactions_old.png", explanation: "Shows the number of replies each author received." },
-          { title: "Score per Author", src: "/images/reactions_old.png", explanation: "Overall score based on engagement metrics for each author." },
-          { title: "Impact Score", src: "/images/reactions_old.png", explanation: "Impact of the posts in terms of community engagement." },
-          { title: "Reaction Analytics", src: "/images/reactions_old.png", explanation: "Breakdown of reactions over time." },
-          { title: "Replies Analytics", src: "/images/reactions_old.png", explanation: "Breakdown of replies over time." },
-          { title: "Engagement Score Analytics", src: "/images/reactions_old.png", explanation: "Shows the engagement score trends across posts." },
-          { title: "Impact Score Analytics", src: "/images/reactions_old.png", explanation: "Highlights posts with highest impact." },
-          { title: "Final Score Analytics", src: "/images/reactions_old.png", explanation: "Final scores combining reactions, replies, and impact." },
-          { title: "Sentiment Analysis", src: "/images/reactions_old.png", explanation: "Analyzes sentiment of replies and comments." },
-          { title: "Common Themes and Keywords", src: "/images/reactions_old.png", explanation: "Shows recurring topics and keywords across submissions." },
-        ].map((item) => (
-          <Section
-            key={item.title}
-            title={item.title}
-            imageSrc={item.src}
-            explanation={item.explanation}
-            bgColor="#ffffff"
-          />
-        ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <Cards
+                label="Total Comments"
+                value={10790}
+                bgColor="bg-gradient-to-br from-blue-600 to-blue-800"
+                change={12.4}
+                trend="up"
+              />
+              <Cards
+                label="Total Reactions"
+                value={5500}
+                bgColor="bg-gradient-to-br from-green-600 to-green-800"
+                change={8.2}
+                trend="up"
+              />
+              <Cards
+                label="Sub Comments"
+                value={1200}
+                bgColor="bg-gradient-to-br from-purple-600 to-purple-800"
+                change={15.7}
+                trend="up"
+              />
+            </div>
 
-      </div>
+            {/* Additional Stats Row */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <Cards
+                label="Engagement Rate"
+                value={4.8}
+                format="percentage"
+                bgColor="bg-gradient-to-br from-orange-500 to-red-600"
+                size="sm"
+              />
+              <Cards
+                label="Avg. Replies"
+                value={23}
+                bgColor="bg-gradient-to-br from-cyan-500 to-blue-600"
+                size="sm"
+              />
+              <Cards
+                label="Unique Users"
+                value={2450}
+                bgColor="bg-gradient-to-br from-pink-500 to-rose-600"
+                size="sm"
+              />
+              <Cards
+                label="Campaign Reach"
+                value={125000}
+                bgColor="bg-gradient-to-br from-indigo-500 to-purple-600"
+                size="sm"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Winner Spotlight - FULL WIDTH */}
+        <section className="py-12 bg-white w-full">
+          <div className="w-full">
+            <div className="text-center mb-10 px-4 sm:px-6">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Winner Spotlight
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Celebrating the most impactful contributors to the
+                #KushFreeFuture campaign
+              </p>
+            </div>
+            <div className="w-full">
+              <WinnerSection />
+            </div>
+          </div>
+        </section>
+
+        {/* Analytics & Charts */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Detailed Analytics
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                In-depth analysis of engagement patterns, top performers, and
+                campaign metrics
+              </p>
+            </div>
+            <Charts />
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-black py-4 bg-gray-200 border-t border-gray-300">
-        <p>© 2025 DSTI. All rights reserved.</p>
-      </footer>
-
+      <Footer />
     </div>
   );
 }
