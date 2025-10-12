@@ -6,28 +6,13 @@ import {
   MessageCircle,
   TrendingUp,
   Facebook,
-  Twitter,
-  Instagram,
-  Mail,
-  ExternalLink,
 } from "lucide-react";
 import { PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: "Campaign Details", href: "#" },
-    { name: "Submission Guidelines", href: "#" },
-    { name: "Success Stories", href: "#" },
-    { name: "Community Guidelines", href: "#" },
-  ];
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-  ];
+  const socialLinks = [{ name: "Facebook", icon: Facebook, href: "#" }];
 
   const stats = [
     { icon: Users, label: "Participants", value: "2.5K+" },
@@ -77,59 +62,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
+          {/* Social & CTA Section */}
+          <div className="space-y-6">
+            {/* Social Links */}
+            <div>
+              <p className="text-sm text-gray-400 mb-3">Follow the campaign</p>
+              <div className="flex space-x-3">
+                {socialLinks.map((social, index) => (
                   <a
-                    href={link.href}
-                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                    key={index}
+                    href={social.href}
+                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 group"
+                    aria-label={social.name}
                   >
-                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{link.name}</span>
+                    <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white" />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Social */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              Get Involved
-            </h4>
-            <div className="space-y-4">
-              {/* Social Links */}
-              <div className="pt-4">
-                <p className="text-sm text-gray-400 mb-3">
-                  Follow the campaign
-                </p>
-                <div className="flex space-x-3">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 group"
-                      aria-label={social.name}
-                    >
-                      <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white" />
-                    </a>
-                  ))}
-                </div>
+                ))}
               </div>
-
-              {/* CTA Button - Link to CM's official facebook page*/}
-              <button
-                onClick={() => window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg mt-6"
-              >
-                Join the Campaign
-              </button>
             </div>
+
+            {/* CTA Button - Link to CM's official facebook page*/}
+            <button
+              onClick={() => window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")}
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Join the Campaign
+            </button>
           </div>
         </div>
 
