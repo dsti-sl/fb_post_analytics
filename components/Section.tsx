@@ -39,7 +39,6 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
-  // Padding classes
   const paddingClasses = {
     none: "p-0",
     sm: "p-4 sm:p-5",
@@ -48,14 +47,12 @@ const Section: React.FC<SectionProps> = ({
     xl: "p-8 sm:p-10",
   };
 
-  // Alignment classes
   const alignClasses = {
     left: "text-left",
     center: "text-center",
     right: "text-right",
   };
 
-  // Shadow classes
   const shadowClasses = {
     none: "",
     sm: "shadow-sm",

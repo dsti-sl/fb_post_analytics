@@ -4,7 +4,8 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-// Type definitions
+import mockData from "./json/mockData.json";
+
 interface Author {
   name: string;
   likes: number;
@@ -22,77 +23,32 @@ interface ChartSeries {
   data: number[];
 }
 
-// Add gender participation data
 interface GenderData {
   gender: string;
   count: number;
   percentage: number;
 }
 
+interface ChartColors {
+  barColors: string[];
+  areaColors: string[];
+  genderColors: string[];
+}
+
+const typedMockData: {
+  authors: Author[];
+  genderParticipation: GenderData[];
+  impactTimeline: ImpactData[];
+  chartColors: ChartColors;
+} = mockData;
+
 const Charts = () => {
-  const authorsData: Author[] = [
-    { name: "J.K. Rowling", likes: 12500000 },
-    { name: "Stephen King", likes: 8900000 },
-    { name: "James Patterson", likes: 7600000 },
-    { name: "Dan Brown", likes: 6800000 },
-    { name: "Nora Roberts", likes: 5400000 },
-    { name: "John Grisham", likes: 4900000 },
-    { name: "George R.R. Martin", likes: 4200000 },
-    { name: "Rick Riordan", likes: 3800000 },
-  ];
+  const authorsData: Author[] = typedMockData.authors;
+  const genderParticipation: GenderData[] = typedMockData.genderParticipation;
 
-  // Gender participation data
-  const genderParticipation: GenderData[] = [
-    { gender: "Male", count: 12500, percentage: 45 },
-    { gender: "Female", count: 14200, percentage: 51 },
-    { gender: "Other", count: 800, percentage: 3 },
-    { gender: "Prefer not to say", count: 500, percentage: 2 },
-  ];
+  const barColors: string[] = typedMockData.chartColors.barColors;
+  const genderColors: string[] = typedMockData.chartColors.genderColors;
 
-  // Impact over time data (campaign timeline)
-  const impactTimeline: ImpactData[] = [
-    { month: "Jan", engagement: 4000, reach: 12000, conversions: 800 },
-    { month: "Feb", engagement: 8000, reach: 25000, conversions: 1500 },
-    { month: "Mar", engagement: 12000, reach: 45000, conversions: 2800 },
-    { month: "Apr", engagement: 18000, reach: 75000, conversions: 4200 },
-    { month: "May", engagement: 25000, reach: 110000, conversions: 6500 },
-    { month: "Jun", engagement: 35000, reach: 165000, conversions: 9200 },
-    { month: "Jul", engagement: 48000, reach: 220000, conversions: 12500 },
-    { month: "Aug", engagement: 62000, reach: 285000, conversions: 16800 },
-    { month: "Sep", engagement: 78000, reach: 350000, conversions: 21000 },
-    { month: "Oct", engagement: 95000, reach: 420000, conversions: 25800 },
-    { month: "Nov", engagement: 115000, reach: 500000, conversions: 31200 },
-    { month: "Dec", engagement: 135000, reach: 580000, conversions: 37500 },
-  ];
-
-  // Format numbers for better readability
-  const formatNumber = (num: number): string => {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1) + "M";
-    } else if (num >= 1000) {
-      return (num / 1000).toFixed(1) + "K";
-    }
-    return num.toString();
-  };
-
-  // Different colors for charts
-  const barColors: string[] = [
-    "#3b82f6",
-    "#ef4444",
-    "#10b981",
-    "#f59e0b",
-    "#8b5cf6",
-    "#ec4899",
-    "#06b6d4",
-    "#84cc16",
-  ];
-
-  const areaColors: string[] = ["#3b82f6", "#10b981", "#8b5cf6"];
-
-  // Gender pie chart colors
-  const genderColors: string[] = ["#3b82f6", "#ec4899", "#8b5cf6", "#6b7280"];
-
-  // Pie Chart Configuration for Gender Participation
   const pieChartOptions: ApexCharts.ApexOptions = {
     chart: {
       type: "pie",
@@ -134,7 +90,6 @@ const Charts = () => {
       horizontalAlign: "center",
       fontSize: "14px",
       fontWeight: 500,
-
       itemMargin: {
         horizontal: 10,
         vertical: 5,

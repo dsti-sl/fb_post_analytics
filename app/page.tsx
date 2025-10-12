@@ -16,7 +16,7 @@ import {
   CheckCircle,
   Star,
 } from "lucide-react";
-import { ACTIVE_CAMPAIGN } from "@/components/constants";
+import { ACTIVE_CAMPAIGN, PLATFORM_TAGLINE } from "@/components/constants";
 
 export default function Dashboard() {
   return (
@@ -40,8 +40,8 @@ export default function Dashboard() {
         <section className="py-12 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <Section
-              title="Awards & Recognition"
-              description="Learn about our prestigious awards program and selection process"
+              title={PLATFORM_TAGLINE}
+              description="Learn about the campaign and selection process"
               bgColor="#f8fafc"
               tabs={[
                 {
@@ -56,9 +56,10 @@ export default function Dashboard() {
                             Campaign Overview
                           </h3>
                           <p className="text-gray-600">
-                            Our awards program recognizes excellence and
-                            innovation across various categories, celebrating
-                            outstanding achievements in the industry.
+                            This campaign recognizes impact, excellence and
+                            innovation across various sectors, celebrating
+                            outstanding collarboration amongst youth leaders in
+                            our dear Mama Salone.
                           </p>
                         </div>
                       </div>
@@ -68,10 +69,10 @@ export default function Dashboard() {
                           <Calendar className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-semibold text-gray-900">
-                              Annual Recognition
+                              Weekly Recognition
                             </h4>
                             <p className="text-sm text-gray-600 mt-1">
-                              Yearly ceremony celebrating top performers
+                              Weekly ceremony celebrating top performers
                             </p>
                           </div>
                         </div>
@@ -104,7 +105,7 @@ export default function Dashboard() {
                           <p className="text-gray-600">
                             Our rigorous multi-phase selection process ensures
                             fairness, transparency, and excellence in every
-                            award category.
+                            campaign.
                           </p>
                         </div>
                       </div>
@@ -114,7 +115,7 @@ export default function Dashboard() {
                           <div className="flex items-center gap-2 mb-3">
                             <FileText className="w-5 h-5 text-blue-600" />
                             <h4 className="font-semibold text-gray-900">
-                              Phase 1: Nomination
+                              Phase 1: Comments
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
@@ -127,7 +128,7 @@ export default function Dashboard() {
                           <div className="flex items-center gap-2 mb-3">
                             <Target className="w-5 h-5 text-orange-600" />
                             <h4 className="font-semibold text-gray-900">
-                              Phase 2: Review
+                              Phase 2: Likes
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
@@ -139,7 +140,7 @@ export default function Dashboard() {
                           <div className="flex items-center gap-2 mb-3">
                             <CheckCircle className="w-5 h-5 text-green-600" />
                             <h4 className="font-semibold text-gray-900">
-                              Phase 3: Final Selection
+                              Phase 3: Impact
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
@@ -239,12 +240,12 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Winner Spotlight - FULL WIDTH */}
+        {/* Winners Spotlight - FULL WIDTH */}
         <section className="py-12 bg-white w-full">
           <div className="w-full">
             <div className="text-center mb-10 px-4 sm:px-6">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                Winner Spotlight
+                Top Contributors & Winners
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Celebrating the most impactful contributors to the{" "}

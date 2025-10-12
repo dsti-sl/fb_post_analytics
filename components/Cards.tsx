@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import {
-  TrendingUp,
-  TrendingDown,
   Minus,
   ThumbsUp,
   Users,
@@ -17,12 +15,16 @@ import {
   ArrowDownRight,
 } from "lucide-react";
 
-interface StatCardProps {
+// Import mock data
+import statCardData from "./json/statCardData.json";
+
+// Type definitions
+interface StatCardData {
   label: string;
   value: number | string;
-  change?: number; // Percentage change
+  change?: number;
   trend?: "up" | "down" | "neutral";
-  icon?: React.ReactNode;
+  iconType?: keyof typeof iconMap;
   bgColor?: string;
   textColor?: string;
   loading?: boolean;
@@ -31,6 +33,8 @@ interface StatCardProps {
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
 }
+
+interface StatCardProps extends StatCardData {}
 
 const iconMap = {
   likes: <ThumbsUp className="w-5 h-5" />,
@@ -49,7 +53,7 @@ export default function StatCard({
   value,
   change,
   trend = "neutral",
-  icon,
+  iconType,
   bgColor = "bg-gradient-to-br from-gray-900 to-gray-800",
   textColor = "text-white",
   loading = false,
@@ -73,7 +77,7 @@ export default function StatCard({
     return iconMap.default;
   };
 
-  const displayIcon = icon || getAutoIcon();
+  const displayIcon = iconType ? iconMap[iconType] : getAutoIcon();
 
   const formatValue = (val: number | string) => {
     if (typeof val === "string") return val;

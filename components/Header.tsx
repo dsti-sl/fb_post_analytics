@@ -45,10 +45,10 @@ const Header = () => {
   return (
     <>
       <header className="relative w-full overflow-hidden">
-        {/* Background */}
+        {/* Background with Zoom Effect */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
             style={{
               backgroundImage: 'url("/images/header.jpg")',
             }}
@@ -56,6 +56,24 @@ const Header = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 lg:from-black/80 lg:via-black/50 lg:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
         </div>
+
+        {/* Add CSS for the zoom animation */}
+        <style jsx>{`
+          @keyframes zoom {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.1);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          .animate-zoom {
+            animation: zoom 20s ease-in-out infinite;
+          }
+        `}</style>
 
         {/* Content */}
         <div className="relative z-10 min-h-[70vh] sm:min-h-[80vh] flex items-center">
@@ -150,7 +168,7 @@ const Header = () => {
                           }
                           className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 sm:py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
                         >
-                          Participate Now
+                          Participate
                         </button>
                         <button
                           onClick={openModal}
@@ -206,7 +224,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Stats Bar - Bottom of Header */}
-        <div className="lg:hidden absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm border-t border-white/20">
+        <div className="lg:hidden p-5 bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm border-t border-white/20">
           <div className="px-4 py-3">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -214,8 +232,8 @@ const Header = () => {
                 <div className="text-gray-300 text-xs">Participants</div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">120+</div>
-                <div className="text-gray-300 text-xs">Contributions</div>
+                <div className="text-white font-bold text-sm">1K+</div>
+                <div className="text-gray-300 text-xs">Submissions</div>
               </div>
               <div>
                 <div className="text-white font-bold text-sm">95%</div>
