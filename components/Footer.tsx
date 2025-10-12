@@ -11,6 +11,7 @@ import {
   Mail,
   ExternalLink,
 } from "lucide-react";
+import { PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -48,7 +49,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  Impact Quest
+                  {PLATFORM_CONFIG.NAME}
                 </h3>
                 <p className="text-sm text-gray-400">Community Challenge</p>
               </div>
@@ -102,12 +103,6 @@ const Footer = () => {
               Get Involved
             </h4>
             <div className="space-y-4">
-              {/* Email */}
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span>contact@kushfreefuture.org</span>
-              </div>
-
               {/* Social Links */}
               <div className="pt-4">
                 <p className="text-sm text-gray-400 mb-3">
@@ -128,8 +123,11 @@ const Footer = () => {
               </div>
 
               {/* CTA Button - Link to CM's official facebook page*/}
-              <button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg mt-6">
-                Join the Movement
+              <button
+                onClick={() => window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg mt-6"
+              >
+                Join the Campaign
               </button>
             </div>
           </div>
@@ -140,34 +138,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-gray-400">
-                © {currentYear} Impact Quest - Community Challenge. All rights
-                reserved.
+                © {currentYear} {PLATFORM_CONFIG.NAME} - Community Challenge.
+                All rights reserved.
               </p>
               <p className="text-gray-500 text-sm mt-1">
                 Data analyzed from community submissions and social engagement
               </p>
-            </div>
-
-            {/* Additional Links */}
-            <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Contact
-              </a>
             </div>
           </div>
         </div>
