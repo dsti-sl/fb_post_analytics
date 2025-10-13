@@ -1,24 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FB Post Analytics Dashboard
+
+This is a [Next.js](https://nextjs.org) project for analyzing Facebook post analytics and community engagement data for Sierra Leone.
+
+## Features
+
+- Community engagement analytics and visualization
+- Facebook post performance metrics
+- Winner showcase with interactive carousel
+- Responsive design with Tailwind CSS
+- Static export support with configurable base path
 
 ## Getting Started
 
-First, run the development server:
+### Development
 
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
+
+```bash
+npm run build
+```
+
+This will create an `out` directory with static files ready for deployment.
+
+## Base Path Configuration
+
+This project supports deployment with a base path prefix for platforms like GitHub Pages or subdirectory hosting.
+
+### Environment Variables
+
+- `NEXT_PUBLIC_BASE_PATH`: Sets the base path for the application
+  - Set to your desired path (e.g., `/fb_post_analytics`)
+  - Leave empty for root domain deployment
+  - Works the same in development and production
+
+### Configuration Files
+
+- `.env.example`: Template with comprehensive configuration options
+- `.env`: environment (gitignored)
+
+### Quick Setup
+
+#### Manual Configuration
+
+1. **Copy the environment template:**
+```bash
+cp .env.example .env
+```
+
+2. **Configure for your deployment:**
+```bash
+# For GitHub Pages (edit .env)
+NEXT_PUBLIC_BASE_PATH=/your-repo-name
+
+# For root domain deployment
+NEXT_PUBLIC_BASE_PATH=
+```
+
+3. **Build and deploy:**
+```bash
+npm run build
+# Deploy the `out` folder to your hosting platform
+```
+
+See [BASEPATH.md](./BASEPATH.md) for detailed documentation on base path configuration.
 
 ## Learn More
 
