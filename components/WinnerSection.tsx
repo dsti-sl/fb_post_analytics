@@ -8,71 +8,57 @@ import {
   Trophy,
   MessageCircle,
   Heart,
-  Zap,
   Award,
   TrendingUp,
-  Crown,
+  User2Icon,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const winnerSlides = [
   {
-    image: "/images/1.jpeg",
-    name: "Iyeba Alpha Kallon",
-    title: "Top Campaigner Award",
+    image: "/profiles/mohamed.jpg",
+    name: "Mohamed Turay",
+    title: "Winner",
     stats: {
-      engagement: "98%",
-      comments: "2,450",
-      reactions: "1,800+",
-      reach: "125K",
+      engagement: "0.90",
+      comments: "4,011",
+      reactions: "72",
+      impact: "0.07"
     },
-    achievements: ["Top Performer", "Viral Content", "Community Favorite"],
+    achievements: ["0.97 - Final Score"],
     overlayColor: "rgba(32, 34, 61, 0.85)",
     isWinner: true,
   },
   {
-    image: "/images/2.jpeg",
-    name: "Sarah Johnson",
-    title: "",
+    image: "/profiles/jaden.jpg",
+    name: "Jaden Ken",
+    title: "Runner Up",
     stats: {
-      engagement: "95%",
-      comments: "3,200",
-      reactions: "2,100+",
-      reach: "98K",
+      engagement: "0.52",
+      comments: "397",
+      reactions: "899",
+      impact: "0.09"
     },
-    achievements: [],
-    overlayColor: "rgba(59, 130, 246, 0.85)",
-    isWinner: false,
-  },
-  {
-    image: "/images/3.jpeg",
-    name: "Mike Chen",
-    title: "",
-    stats: {
-      engagement: "92%",
-      comments: "1,800",
-      reactions: "1,500+",
-      reach: "75K",
-    },
-    achievements: [],
+    achievements: ["0.61 - Final Score"],
     overlayColor: "rgba(139, 92, 246, 0.85)",
     isWinner: false,
   },
   {
-    image: "/images/4.jpeg",
-    name: "Emma Rodriguez",
-    title: "",
+    image: "/profiles/samuel.jpg",
+    name: "Samuel Saio",
+    title: "Runner Up",
     stats: {
-      engagement: "96%",
-      comments: "2,800",
-      reactions: "2,300+",
-      reach: "110K",
+      engagement: "0.56",
+      comments: "1,125",
+      reactions: "654",
+      impact: "0.05"
     },
-    achievements: [],
-    overlayColor: "rgba(236, 72, 153, 0.85)",
+    achievements: ["0.61 - Final Score"],
+    overlayColor: "rgba(59, 130, 246, 0.85)",
     isWinner: false,
   },
+
 ];
 
 export default function WinnerSection() {
@@ -268,7 +254,7 @@ export default function WinnerSection() {
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 px-3 py-1 rounded-full text-xs sm:text-sm font-bold mb-2 shadow-lg"
                       >
                         <Trophy className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
-                        Campaign Winner
+                        Winner
                       </motion.div>
                     )}
                     <motion.h3
@@ -318,6 +304,11 @@ export default function WinnerSection() {
                         value: winnerSlides[currentSlide].stats.engagement,
                       },
                       {
+                        icon: User2Icon,
+                        label: "Impact",
+                        value: winnerSlides[currentSlide].stats.impact,
+                      },
+                      {
                         icon: MessageCircle,
                         label: "Comments",
                         value: winnerSlides[currentSlide].stats.comments,
@@ -326,11 +317,6 @@ export default function WinnerSection() {
                         icon: Heart,
                         label: "Reactions",
                         value: winnerSlides[currentSlide].stats.reactions,
-                      },
-                      {
-                        icon: Zap,
-                        label: "Reach",
-                        value: winnerSlides[currentSlide].stats.reach,
                       },
                     ].map((stat, index) => (
                       <motion.div
@@ -383,7 +369,7 @@ export default function WinnerSection() {
                       className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
                     >
                       <Trophy className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
-                      Campaign Winner
+                      Winner
                     </motion.div>
                   )}
                 </motion.div>
@@ -398,17 +384,15 @@ export default function WinnerSection() {
                   onClick={() => goToSlide(index)}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`relative p-1 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? "bg-yellow-400 shadow-lg"
-                      : "bg-white/50 hover:bg-white/70"
-                  }`}
+                  className={`relative p-1 rounded-full transition-all duration-300 ${index === currentSlide
+                    ? "bg-yellow-400 shadow-lg"
+                    : "bg-white/50 hover:bg-white/70"
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 >
                   <motion.div
-                    className={`w-2 h-2 rounded-full ${
-                      index === currentSlide ? "bg-amber-600" : "bg-transparent"
-                    }`}
+                    className={`w-2 h-2 rounded-full ${index === currentSlide ? "bg-amber-600" : "bg-transparent"
+                      }`}
                     layoutId="activeDot"
                   />
                 </motion.button>

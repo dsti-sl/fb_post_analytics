@@ -11,27 +11,35 @@ const Header = () => {
 
   const winningSubmission = {
     title: "#KushFreeFuture - A Community's Journey to Wellness",
-    author: "Sarah Johnson",
-    date: "December 15, 2023",
+    author: "Mohamed Turay",
+    date: "October 13, 2025",
     stats: {
-      likes: "12.5K",
-      comments: "2.4K",
-      shares: "1.8K",
-      reach: "125K",
+      likes: "72",
+      comments: "4011",
     },
     content: `
-      Our community came together in an incredible display of unity and determination to address the challenges we face. The #KushFreeFuture campaign wasn't just about raising awareness—it was about creating lasting change through education, support, and community empowerment.
-
-      What made this submission stand out was its comprehensive approach:
-      
-      • **Educational Workshops**: We organized 15 community workshops reaching over 2,000 youth
-      • **Peer Support Networks**: Established mentorship programs connecting experienced professionals with at-risk youth
-      • **Creative Expression**: Used art, music, and storytelling to spread our message
-      • **Digital Campaign**: Leveraged social media to reach a global audience
-      
-      The impact has been measurable and meaningful. We've seen a 40% increase in youth engagement with community centers and a 25% rise in participation in positive extracurricular activities. Most importantly, we've created a support system that continues to grow and help our community thrive.
-      
-      This winning submission demonstrates that real change happens when we work together, listen to each other, and believe in the power of community.
+      Futures have been destroyed. The hope of a better Sierra Leone is being shattered. Families are crying, and parents are groaning for the future of their children who have fallen victim to kush. The youth are dying, and their potentials are being wasted.
+Just imagine a situation where your brother with a brighter future loses himself to the deadly intake of kush. His dreams are no longer alive, family members loses hope, and the community begins to fall apart under the effect of addiction. This is exactly what is happening to my brother Ibrahim. He was once full of ambition, I saw him as an inspiration before, now he is struggling to escape the chains of this dangerous drug that has destroyed so many young lives in Sierra Leone today.
+A KUSH FREE FUTURE IN CRAB TONG COMMUNITY, LUMLEY.
+PROBLEM ANALYSIS
+Youths represent 45% of the population of Crab Tong Community, Lumley. Our community has become one of the hardest communities hit by the kush epidemic in Sierra Leone. Kush has rapidly spread among the youth population in Crab Tong Community, causing devastating social, health & economic economic consequences. This community was once known for effective petty trading, schooling, and fishing, now witnessing unemployment and family break downs due to the intake of kush.
+This is due to unemployment, stress, poverty, peer group influence, lack of parental guidance, lack of awareness, etc. And because of kush many youths in Crab Tong Community are suffering from severe mental health disorders, deaths, swollen legs, stigmatization, loss of dignity to name a few. About 50,000 youths have been affected and the community has become a hub for drug trafficking, and social systems of Crab Tong continue to weaken.
+SOLUTION
+The kush crisis in Crab Town demands urgent, collective action. The following solutions outline practical steps toward recovery, empowerment, and a #KushFreeFuture in Crab Tong Community:
+1. REHABILITATION CENTER & KUSH HOTLINE: A sum of $25,000 will be invested in rehabilitation and counseling by establishing a community recovery center for kush addicts with the provision of detox supplies, therapy sessions, and family support programs. And establish a kush hotline alert and rewards for verified tips.
+2. YOUTH EMPOWERMENT & SKILLS TRAINING: We will use $30,000 to launch a six months skills training program like carpentry, tailoring, mechanics, digital literacy, etc. ensuring the proviof starter grants for trained youths to scale what they learn. To ensure the effectiveness of this, we will establish a partnership with local mentors and small businesses.
+3. COMMUNITY AWARENESS RAISING & SENSITIZATION $20,000: A campaign that will be launched to run anti-drug awareness in community schools, radio, churches, mosques, community centers, etc.
+4. ECONOMIC EMPOWERMENT FOR FAMILIES: $15,000 will be used to support the mothers or guardians of affected youth with small business grants to reduce economic pressure that fuels kush intake.
+5. COMMUNITY POLICING & SAFE ZONES: $10,000 will be used to trained community watch groups to report dealers safely and partner with local law enforcement & leaders to establish safe spaces.
+6. MONITORING, EVALUATION, ADMINISTRATION, AND MISCELLANEOUS EXPENSES $10,000.
+With the above solution Dr Moinina David Sengeh, we can absolutely ensure a #KushFreeFuture in Crab Tong Community.
+IMPACT
+This is in alignment with SDG 3, SDG 4, SDG 8, & SDG 10; Aspiration 1,3,4,6, & 7 of Agenda 2063, the Big Five Game Changers, Strategic Objective 2 of the Sierra Leone National Youth Policy, Pillar 3 of the National Drug Control Master Plan.
+The #KushFreeFuture in Crab Tong Community, Lumley will directly impact about 35,000 youths and indirectly benefit over 15,000 people, restoring safety, dignity, and opportunity.
+To Viewers:
+Do you know someone who has fallen victim to Kush? Share that story with me. This is your opportunity.
+______________
+JESUS IS KING
     `,
     tags: [
       "Community Engagement",
@@ -183,15 +191,7 @@ const Header = () => {
                       <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-white/20">
                         <div className="text-center">
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            50K+
-                          </div>
-                          <div className="text-xs sm:text-sm text-gray-400">
-                            Participants
-                          </div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            1K +
+                            2K+
                           </div>
                           <div className="text-xs sm:text-sm text-gray-400">
                             Submissions
@@ -199,10 +199,18 @@ const Header = () => {
                         </div>
                         <div className="text-center">
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            95%
+                            14K+
                           </div>
                           <div className="text-xs sm:text-sm text-gray-400">
-                            Success
+                            SubComments
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
+                            4K+
+                          </div>
+                          <div className="text-xs sm:text-sm text-gray-400">
+                            Reactions
                           </div>
                         </div>
                       </div>
@@ -228,16 +236,16 @@ const Header = () => {
           <div className="px-4 py-3">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-white font-bold text-sm">50K+</div>
-                <div className="text-gray-300 text-xs">Participants</div>
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm">1K+</div>
+                <div className="text-white font-bold text-sm">2K+</div>
                 <div className="text-gray-300 text-xs">Submissions</div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">95%</div>
-                <div className="text-gray-300 text-xs">Success</div>
+                <div className="text-white font-bold text-sm">14K+</div>
+                <div className="text-gray-300 text-xs">SubComments</div>
+              </div>
+              <div>
+                <div className="text-white font-bold text-sm">4k+</div>
+                <div className="text-gray-300 text-xs">Reactions</div>
               </div>
             </div>
           </div>
@@ -278,11 +286,8 @@ const Header = () => {
                 </h3>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                   <span className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-yellow-500" />
                     By {winningSubmission.author}
                   </span>
-                  <span>•</span>
-                  <span>{winningSubmission.date}</span>
                 </div>
               </div>
 
@@ -293,7 +298,7 @@ const Header = () => {
                     <Heart className="w-4 h-4 text-red-500" />
                     {winningSubmission.stats.likes}
                   </div>
-                  <div className="text-xs text-gray-600">Likes</div>
+                  <div className="text-xs text-gray-600">Reactions</div>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-gray-900 font-bold">
@@ -301,19 +306,6 @@ const Header = () => {
                     {winningSubmission.stats.comments}
                   </div>
                   <div className="text-xs text-gray-600">Comments</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-gray-900 font-bold">
-                    <Share2 className="w-4 h-4 text-green-500" />
-                    {winningSubmission.stats.shares}
-                  </div>
-                  <div className="text-xs text-gray-600">Shares</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-gray-900 font-bold">
-                    {winningSubmission.stats.reach}
-                  </div>
-                  <div className="text-xs text-gray-600">Reach</div>
                 </div>
               </div>
 
