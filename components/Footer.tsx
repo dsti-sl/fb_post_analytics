@@ -34,7 +34,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  {PLATFORM_CONFIG.NAME}
+                  {PLATFORM_CONFIG.NAME} - #TogetherWeWillDeliver
                 </h3>
                 <p className="text-sm text-gray-400">Community Challenge</p>
               </div>
@@ -44,22 +44,6 @@ const Footer = () => {
               growth through creative engagement and social impact campaigns.
             </p>
 
-            {/* Campaign Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="p-2 bg-white/10 rounded-lg">
-                    <stat.icon className="w-4 h-4 text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-white">
-                      {stat.value}
-                    </p>
-                    <p className="text-xs text-gray-400">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Social & CTA Section */}

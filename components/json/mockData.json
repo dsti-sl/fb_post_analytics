@@ -1,19 +1,46 @@
 {
-  "authors": [
-    { "name": "J.K. Rowling", "likes": 12500000 },
-    { "name": "Stephen King", "likes": 8900000 },
-    { "name": "James Patterson", "likes": 7600000 },
-    { "name": "Dan Brown", "likes": 6800000 },
-    { "name": "Nora Roberts", "likes": 5400000 },
-    { "name": "John Grisham", "likes": 4900000 },
-    { "name": "George R.R. Martin", "likes": 4200000 },
-    { "name": "Rick Riordan", "likes": 3800000 }
+  "authors_reactions": [
+    { "name": "Jaden Ken", "data": 899 },
+    { "name": "Alfat Turay", "data": 785 },
+    { "name": "Samuel Saio", "data": 654 },
+    { "name": "Kallon Ishaka", "data": 228 },
+    { "name": "Love of Christ Foundation S/L", "data": 218 },
+    { "name": "Trevor Jex King", "data": 172 },
+    { "name": "Julius Randolph Kargbo Jr.", "data": 167 },
+    { "name": "Abubakarr Umarr Sesay", "data": 142 },
+    { "name": "Mohamed Shuaib", "data": 139 },
+    { "name": "Marah Mansonitho", "data": 131 }
+  ],
+  "authors_comments": [
+    { "name": "Mohamed Turay", "data": 4011 },
+    { "name": "Julius Randolph Kargbo Jr.", "data": 1966 },
+    { "name": "Samuel Saio", "data": 1125 },
+    { "name": "Timothy Kamara", "data": 547 },
+    { "name": "Alfat Turay", "data": 446 },
+    { "name": "Kallon Ishaka", "data": 438 },
+    { "name": "Jaden Ken", "data": 397 },
+    { "name": "Amb Amadu Tarawallie", "data": 365 },
+    { "name": "Amb Sahid Pj Abu", "data": 354 },
+    { "name": "Mohamed Shuaib", "data": 286 }
+  ],
+  "engagement_score": [
+    { "name": "Mohamed Turay", "data": 0.90 },
+    { "name": "Samuel Saio", "data": 0.56 },
+    { "name": "Jaden Ken", "data": 0.52 }
+  ],
+  "authors_impacts": [
+    { "name": "Jaden Ken", "data": 0.09 },
+    { "name": "Mohamed Turay", "data": 0.07 },
+    { "name": "Samuel Saio", "data": 0.05 }
+  ],
+  "authors_final": [
+    { "name": "Mohamed Turay", "data": 0.97 },
+    { "name": "Jaden Ken", "data": 0.61 },
+    { "name": "Samuel Saio", "data": 0.61 }
   ],
   "genderParticipation": [
-    { "gender": "Male", "count": 12500, "percentage": 45 },
-    { "gender": "Female", "count": 14200, "percentage": 51 },
-    { "gender": "Other", "count": 800, "percentage": 3 },
-    { "gender": "Prefer not to say", "count": 500, "percentage": 2 }
+    { "gender": "Male", "percentage": 70 },
+    { "gender": "Female", "percentage": 30 }
   ],
   "impactTimeline": [
     { "month": "Jan", "engagement": 4000, "reach": 12000, "conversions": 800 },

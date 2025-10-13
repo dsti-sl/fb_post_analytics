@@ -15,9 +15,6 @@ import {
   ArrowDownRight,
 } from "lucide-react";
 
-// Import mock data
-import statCardData from "./json/statCardData.json";
-
 // Type definitions
 interface StatCardData {
   label: string;
@@ -34,7 +31,7 @@ interface StatCardData {
   onClick?: () => void;
 }
 
-interface StatCardProps extends StatCardData {}
+interface StatCardProps extends StatCardData { }
 
 const iconMap = {
   likes: <ThumbsUp className="w-5 h-5" />,
@@ -82,6 +79,11 @@ export default function StatCard({
   const formatValue = (val: number | string) => {
     if (typeof val === "string") return val;
 
+    const formatNumber = (n: number) => {
+      // Always remove decimals and round down
+      return Math.floor(n);
+    };
+
     switch (format) {
       case "percentage":
         return `${val}%`;
@@ -90,9 +92,9 @@ export default function StatCard({
       case "number":
       default:
         if (val >= 1000000) {
-          return `${(val / 1000000).toFixed(1)}M`;
+          return `${formatNumber(val / 1000000)}M+`;
         } else if (val >= 1000) {
-          return `${(val / 1000).toFixed(1)}K`;
+          return `${formatNumber(val / 1000)}K+`;
         }
         return val.toLocaleString();
     }
@@ -146,13 +148,11 @@ export default function StatCard({
   if (loading) {
     return (
       <div
-        className={`rounded-xl shadow-lg ${
-          sizeClasses[size]
-        } relative overflow-hidden animate-pulse ${
-          typeof bgColor === "string" && bgColor.startsWith("bg-")
+        className={`rounded-xl shadow-lg ${sizeClasses[size]
+          } relative overflow-hidden animate-pulse ${typeof bgColor === "string" && bgColor.startsWith("bg-")
             ? bgColor
             : ""
-        }`}
+          }`}
         style={
           typeof bgColor === "string" && !bgColor.startsWith("bg-")
             ? { backgroundColor: bgColor }
@@ -174,10 +174,9 @@ export default function StatCard({
         rounded-xl shadow-lg relative overflow-hidden group cursor-pointer transition-all duration-300
         hover:scale-105 hover:shadow-xl active:scale-95
         ${sizeClasses[size]}
-        ${
-          typeof bgColor === "string" && bgColor.startsWith("bg-")
-            ? bgColor
-            : ""
+        ${typeof bgColor === "string" && bgColor.startsWith("bg-")
+          ? bgColor
+          : ""
         }
         ${textColor}
       `}
@@ -230,7 +229,7 @@ export default function StatCard({
               {getDirectionIcon()}
             </div>
             <span className={`text-sm font-medium ${getTrendColor()}`}>
-              {Math.abs(change)}%
+              approx {Math.abs(change)}%
             </span>
             <span className="text-xs opacity-70">vs last period</span>
           </div>

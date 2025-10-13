@@ -58,7 +58,7 @@ export default function Dashboard() {
                           <p className="text-gray-600">
                             This campaign recognizes impact, excellence and
                             innovation across various sectors, celebrating
-                            outstanding collarboration amongst youth leaders in
+                            outstanding collaboration amongst youth leaders in
                             our dear Mama Salone.
                           </p>
                         </div>
@@ -69,10 +69,10 @@ export default function Dashboard() {
                           <Calendar className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-semibold text-gray-900">
-                              Weekly Recognition
+                              Recognition
                             </h4>
                             <p className="text-sm text-gray-600 mt-1">
-                              Weekly ceremony celebrating top performers
+                              Celebrating top performers
                             </p>
                           </div>
                         </div>
@@ -80,10 +80,10 @@ export default function Dashboard() {
                           <Users className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-semibold text-gray-900">
-                              Industry-wide
+                              Nation-wide
                             </h4>
                             <p className="text-sm text-gray-600 mt-1">
-                              Participation from across the sector
+                              Participation across sectors
                             </p>
                           </div>
                         </div>
@@ -119,8 +119,7 @@ export default function Dashboard() {
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Open nominations from the community and
-                            self-nominations
+                            Open discussions from the community, replies and sub-comments.
                           </p>
                         </div>
 
@@ -128,11 +127,11 @@ export default function Dashboard() {
                           <div className="flex items-center gap-2 mb-3">
                             <Target className="w-5 h-5 text-orange-600" />
                             <h4 className="font-semibold text-gray-900">
-                              Phase 2: Likes
+                              Phase 2: Reactions
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Expert panel evaluation against established criteria
+                            Likes, love, and other reactions to gauge popularity.
                           </p>
                         </div>
 
@@ -144,7 +143,7 @@ export default function Dashboard() {
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Committee deliberation and winner confirmation
+                            Deliberation on impact .
                           </p>
                         </div>
                       </div>
@@ -157,8 +156,7 @@ export default function Dashboard() {
                               Evaluation Criteria
                             </h4>
                             <p className="text-sm text-gray-600">
-                              Winners are selected based on innovation, impact,
-                              excellence, and contribution to the industry.
+                              Winners are selected based on post engagements (Comments, Reactions) and impact (SDG Alignment, Innovation, Feasibility, Sustainability, National Development).
                             </p>
                           </div>
                         </div>
@@ -188,21 +186,21 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <Cards
                 label="Total Comments"
-                value={10790}
+                value={16410}
                 bgColor="bg-gradient-to-br from-blue-600 to-blue-800"
-                change={12.4}
+                change={37.5}
                 trend="up"
               />
               <Cards
                 label="Total Reactions"
-                value={5500}
+                value={4500}
                 bgColor="bg-gradient-to-br from-green-600 to-green-800"
                 change={8.2}
                 trend="up"
               />
               <Cards
                 label="Sub Comments"
-                value={1200}
+                value={14290}
                 bgColor="bg-gradient-to-br from-purple-600 to-purple-800"
                 change={15.7}
                 trend="up"
@@ -210,29 +208,29 @@ export default function Dashboard() {
             </div>
 
             {/* Additional Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Cards
+            <div className="container grid grid-cols-1 md:grid-cols-4 gap-4">
+              {/*   <Cards
                 label="Engagement Rate"
-                value={4.8}
+                value={13.60}
                 format="percentage"
                 bgColor="bg-gradient-to-br from-orange-500 to-red-600"
                 size="sm"
-              />
+              /> */}
               <Cards
-                label="Avg. Replies"
-                value={23}
+                label="Shares"
+                value={306}
                 bgColor="bg-gradient-to-br from-cyan-500 to-blue-600"
                 size="sm"
               />
               <Cards
                 label="Unique Users"
-                value={2450}
+                value={5759}
                 bgColor="bg-gradient-to-br from-pink-500 to-rose-600"
                 size="sm"
               />
               <Cards
                 label="Campaign Reach"
-                value={125000}
+                value={198000}
                 bgColor="bg-gradient-to-br from-indigo-500 to-purple-600"
                 size="sm"
               />

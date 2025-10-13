@@ -1,7 +1,8 @@
-import { Metadata } from "next";
 import "./globals.css";
+import { Metadata } from "next";
 import { ReactNode } from "react";
 import { PLATFORM_CONFIG, PLATFORM_DESCRIPTION } from "@/components/constants";
+
 
 export const metadata: Metadata = {
   title: PLATFORM_CONFIG.NAME,
