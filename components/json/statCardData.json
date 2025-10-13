@@ -1,0 +1,147 @@
+{
+  "statCards": [
+    {
+      "label": "Total Likes",
+      "value": 1250000,
+      "change": 12.5,
+      "trend": "up",
+      "iconType": "likes",
+      "bgColor": "bg-gradient-to-br from-blue-900 to-blue-800",
+      "format": "number",
+      "size": "md"
+    },
+    {
+      "label": "New Followers",
+      "value": 84500,
+      "change": 8.2,
+      "trend": "up",
+      "iconType": "followers",
+      "bgColor": "bg-gradient-to-br from-green-900 to-green-800",
+      "format": "number",
+      "size": "md"
+    },
+    {
+      "label": "Engagement Rate",
+      "value": 4.8,
+      "change": -2.1,
+      "trend": "down",
+      "iconType": "engagement",
+      "bgColor": "bg-gradient-to-br from-purple-900 to-purple-800",
+      "format": "percentage",
+      "size": "md"
+    },
+    {
+      "label": "Monthly Revenue",
+      "value": 12500,
+      "change": 15.3,
+      "trend": "up",
+      "iconType": "revenue",
+      "bgColor": "bg-gradient-to-br from-amber-900 to-amber-800",
+      "format": "currency",
+      "currency": "$",
+      "size": "lg"
+    },
+    {
+      "label": "Content Reach",
+      "value": 2500000,
+      "change": 22.7,
+      "trend": "up",
+      "iconType": "reach",
+      "bgColor": "bg-gradient-to-br from-indigo-900 to-indigo-800",
+      "format": "number",
+      "size": "md"
+    },
+    {
+      "label": "Total Shares",
+      "value": 45200,
+      "change": 5.4,
+      "trend": "up",
+      "iconType": "shares",
+      "bgColor": "bg-gradient-to-br from-pink-900 to-pink-800",
+      "format": "number",
+      "size": "sm"
+    },
+    {
+      "label": "Post Reactions",
+      "value": 189000,
+      "change": -3.2,
+      "trend": "down",
+      "iconType": "reactions",
+      "bgColor": "bg-gradient-to-br from-red-900 to-red-800",
+      "format": "number",
+      "size": "md"
+    },
+    {
+      "label": "Performance Score",
+      "value": 87,
+      "change": 1.5,
+      "trend": "up",
+      "iconType": "performance",
+      "bgColor": "bg-gradient-to-br from-emerald-900 to-emerald-800",
+      "format": "number",
+      "size": "sm"
+    },
+    {
+      "label": "Video Views",
+      "value": 3560000,
+      "change": 18.9,
+      "trend": "up",
+      "iconType": "reach",
+      "bgColor": "bg-gradient-to-br from-cyan-900 to-cyan-800",
+      "format": "number",
+      "size": "lg"
+    },
+    {
+      "label": "Conversion Rate",
+      "value": 3.2,
+      "change": 0,
+      "trend": "neutral",
+      "iconType": "engagement",
+      "bgColor": "bg-gradient-to-br from-gray-900 to-gray-800",
+      "format": "percentage",
+      "size": "sm"
+    },
+    {
+      "label": "Active Users",
+      "value": 12500,
+      "change": 7.8,
+      "trend": "up",
+      "iconType": "followers",
+      "bgColor": "bg-gradient-to-br from-violet-900 to-violet-800",
+      "format": "number",
+      "size": "md"
+    },
+    {
+      "label": "Avg. Session Time",
+      "value": 4.2,
+      "change": -1.2,
+      "trend": "down",
+      "iconType": "performance",
+      "bgColor": "bg-gradient-to-br from-orange-900 to-orange-800",
+      "format": "number",
+      "size": "sm"
+    }
+  ],
+  "loadingCards": [
+    {
+      "label": "Loading Metric 1",
+      "loading": true,
+      "size": "md"
+    },
+    {
+      "label": "Loading Metric 2",
+      "loading": true,
+      "size": "md"
+    },
+    {
+      "label": "Loading Metric 3",
+      "loading": true,
+      "size": "lg"
+    },
+    {
+      "label": "Loading Metric 4",
+      "loading": true,
+      "size": "sm"
+    }
+  ]
+}

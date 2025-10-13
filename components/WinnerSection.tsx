@@ -11,6 +11,7 @@ import {
   Zap,
   Award,
   TrendingUp,
+  Crown,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -19,7 +20,7 @@ const winnerSlides = [
   {
     image: "/images/1.jpeg",
     name: "Iyeba Alpha Kallon",
-    title: "Content Creator of the Month",
+    title: "Top Campaigner Award",
     stats: {
       engagement: "98%",
       comments: "2,450",
@@ -28,45 +29,49 @@ const winnerSlides = [
     },
     achievements: ["Top Performer", "Viral Content", "Community Favorite"],
     overlayColor: "rgba(32, 34, 61, 0.85)",
+    isWinner: true,
   },
   {
     image: "/images/2.jpeg",
     name: "Sarah Johnson",
-    title: "Most Engaging Posts",
+    title: "",
     stats: {
       engagement: "95%",
       comments: "3,200",
       reactions: "2,100+",
       reach: "98K",
     },
-    achievements: ["Engagement Master", "Consistent Performer"],
+    achievements: [],
     overlayColor: "rgba(59, 130, 246, 0.85)",
+    isWinner: false,
   },
   {
     image: "/images/3.jpeg",
     name: "Mike Chen",
-    title: "Rising Star Award",
+    title: "",
     stats: {
       engagement: "92%",
       comments: "1,800",
       reactions: "1,500+",
       reach: "75K",
     },
-    achievements: ["Fastest Growth", "Innovative Content"],
+    achievements: [],
     overlayColor: "rgba(139, 92, 246, 0.85)",
+    isWinner: false,
   },
   {
     image: "/images/4.jpeg",
     name: "Emma Rodriguez",
-    title: "Community Builder",
+    title: "",
     stats: {
       engagement: "96%",
       comments: "2,800",
       reactions: "2,300+",
       reach: "110K",
     },
-    achievements: ["Best Interactions", "Community Leader"],
+    achievements: [],
     overlayColor: "rgba(236, 72, 153, 0.85)",
+    isWinner: false,
   },
 ];
 
@@ -76,7 +81,6 @@ export default function WinnerSection() {
   const [isHovering, setIsHovering] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Auto-rotate slides when not hovering
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering && !isAnimating) {
@@ -175,10 +179,24 @@ export default function WinnerSection() {
     }),
   };
 
+  const winnerTagVariants = {
+    hidden: { scale: 0, rotate: -45 },
+    visible: {
+      scale: 1,
+      rotate: -45,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        delay: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="mb-16 overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div className="overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-gray-900 to-gray-800">
       <section
-        className="relative min-h-[80vh] h-96 sm:h-[550px] lg:h-[600px] w-full overflow-hidden"
+        className="relative min-h-[70vh] sm:min-h-[80vh] lg:h-[700px] w-full overflow-hidden"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -193,6 +211,14 @@ export default function WinnerSection() {
               exit="exit"
               className="absolute inset-0"
             >
+              {winnerSlides[currentSlide].isWinner && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  className="absolute top-6 right-6 z-20"
+                ></motion.div>
+              )}
+
               <Image
                 src={winnerSlides[currentSlide].image}
                 alt={`Winner - ${winnerSlides[currentSlide].name}`}
@@ -200,7 +226,7 @@ export default function WinnerSection() {
                 className="object-cover"
                 priority={currentSlide === 0}
                 quality={95}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
               />
               <div
                 className="absolute inset-0"
@@ -220,8 +246,8 @@ export default function WinnerSection() {
         </div>
 
         <div className="relative z-10 h-full w-full flex items-center">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center p-10 sm:p-12 lg:p-16">
               {/* Left Content */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -230,45 +256,37 @@ export default function WinnerSection() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="text-white space-y-6"
+                  className="text-white space-y-4 sm:space-y-6"
                 >
-                  {/* Winner Badge */}
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{
-                      delay: 0.5,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15,
-                    }}
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider shadow-2xl mb-4"
-                  >
-                    <Trophy className="w-5 h-5" />
-                    <span>Grand Prize Winner</span>
-                  </motion.div>
-
                   {/* Winner Title */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <h2 className="text-2xl sm:text-5xl font-black uppercase tracking-tight mb-2 bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                          Winner Spotlight
-                        </h2>
-                        <p className="text-xl text-gray-300 font-light">
-                          {winnerSlides[currentSlide].title}
-                        </p>
-                      </div>
-                    </div>
-
+                  <div className="space-y-3 sm:space-y-4">
+                    {winnerSlides[currentSlide].isWinner && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 px-3 py-1 rounded-full text-xs sm:text-sm font-bold mb-2 shadow-lg"
+                      >
+                        <Trophy className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
+                        Campaign Winner
+                      </motion.div>
+                    )}
                     <motion.h3
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.7 }}
-                      className="text-3xl sm:text-4xl font-bold text-white"
+                      className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight"
                     >
                       {winnerSlides[currentSlide].name}
                     </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.8 }}
+                      className="text-lg sm:text-xl text-gray-200"
+                    >
+                      {winnerSlides[currentSlide].title}
+                    </motion.p>
                   </div>
 
                   {/* Achievements */}
@@ -282,7 +300,7 @@ export default function WinnerSection() {
                       (achievement, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center gap-1 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-sm border border-white/20"
+                          className="inline-flex items-center gap-1 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm border border-white/20"
                         >
                           <Award className="w-3 h-3 text-yellow-400" />
                           {achievement}
@@ -292,7 +310,7 @@ export default function WinnerSection() {
                   </motion.div>
 
                   {/* Winner Stats */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 pb-10">
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 pb-6 sm:pb-10">
                     {[
                       {
                         icon: TrendingUp,
@@ -321,14 +339,16 @@ export default function WinnerSection() {
                         variants={statItemVariants}
                         initial="hidden"
                         animate="visible"
-                        className="flex items-center gap-4 p-3 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
+                        className="flex items-center gap-3 p-3 bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/10"
                       >
-                        <div className="p-2 bg-white/10 rounded-lg">
-                          <stat.icon className="w-5 h-5 text-yellow-400" />
+                        <div className="p-2 bg-white/10 rounded-lg flex-shrink-0">
+                          <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-300">{stat.label}</p>
-                          <p className="text-lg font-bold text-white">
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs sm:text-sm text-gray-300 truncate">
+                            {stat.label}
+                          </p>
+                          <p className="text-base sm:text-lg font-bold text-white truncate">
                             {stat.value}
                           </p>
                         </div>
@@ -338,7 +358,7 @@ export default function WinnerSection() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Right Side - Image Preview */}
+              {/* Right Side - Image Preview (Hidden on mobile) */}
               <div className="hidden lg:flex justify-center">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
@@ -354,12 +374,24 @@ export default function WinnerSection() {
                     quality={90}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {/* Winner badge on preview image */}
+                  {winnerSlides[currentSlide].isWinner && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 1, type: "spring" }}
+                      className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
+                    >
+                      <Trophy className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
+                      Campaign Winner
+                    </motion.div>
+                  )}
                 </motion.div>
               </div>
             </div>
 
             {/* Navigation dots */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3">
+            <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 flex justify-center gap-2 sm:gap-3">
               {winnerSlides.map((_, index) => (
                 <motion.button
                   key={index}
@@ -385,6 +417,27 @@ export default function WinnerSection() {
           </div>
         </div>
 
+        {/* Mobile Navigation Arrows (Always visible on touch devices) */}
+        <div className="lg:hidden absolute inset-0 pointer-events-none">
+          <div className="relative w-full h-full">
+            <button
+              onClick={goToPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all pointer-events-auto active:scale-95"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all pointer-events-auto active:scale-95"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Navigation Arrows (Hover only) */}
         <AnimatePresence>
           {isHovering && (
             <>
@@ -395,10 +448,10 @@ export default function WinnerSection() {
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(0,0,0,0.8)" }}
                 whileTap={{ scale: 0.9 }}
                 onClick={goToPrev}
-                className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-4 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all"
+                className="hidden lg:block absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 lg:p-4 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all"
                 aria-label="Previous slide"
               >
-                <ChevronLeft size={28} />
+                <ChevronLeft size={24} className="lg:w-7 lg:h-7" />
               </motion.button>
               <motion.button
                 initial={{ opacity: 0, x: 20 }}
@@ -407,15 +460,16 @@ export default function WinnerSection() {
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(0,0,0,0.8)" }}
                 whileTap={{ scale: 0.9 }}
                 onClick={goToNext}
-                className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-4 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all"
+                className="hidden lg:block absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 lg:p-4 rounded-full z-10 backdrop-blur-md border border-white/20 shadow-2xl transition-all"
                 aria-label="Next slide"
               >
-                <ChevronRight size={28} />
+                <ChevronRight size={24} className="lg:w-7 lg:h-7" />
               </motion.button>
             </>
           )}
         </AnimatePresence>
 
+        {/* Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
           <motion.div
             key={currentSlide}

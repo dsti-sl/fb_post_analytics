@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { X, Trophy, Star, Heart, MessageCircle, Share2 } from "lucide-react";
+import { LOCAL_TERMS, PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,10 +45,10 @@ const Header = () => {
   return (
     <>
       <header className="relative w-full overflow-hidden">
-        {/* Background */}
+        {/* Background with Zoom Effect */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
             style={{
               backgroundImage: 'url("/images/header.jpg")',
             }}
@@ -55,6 +56,24 @@ const Header = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 lg:from-black/80 lg:via-black/50 lg:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
         </div>
+
+        {/* Add CSS for the zoom animation */}
+        <style jsx>{`
+          @keyframes zoom {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.1);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          .animate-zoom {
+            animation: zoom 20s ease-in-out infinite;
+          }
+        `}</style>
 
         {/* Content */}
         <div className="relative z-10 min-h-[70vh] sm:min-h-[80vh] flex items-center">
@@ -72,25 +91,31 @@ const Header = () => {
                     {/* Main Title */}
                     <div className="space-y-2 sm:space-y-3">
                       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                        Impact
+                        {PLATFORM_CONFIG.NAME.split(" ")[0]}
                         <span className="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                          Quest
+                          {PLATFORM_CONFIG.NAME.split(" ").slice(1).join(" ")}{" "}
                         </span>
                       </h1>
                     </div>
 
                     {/* Description */}
                     <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                      Embark on a journey to create meaningful change. Join
-                      thousands of innovators, creators, and visionaries in
-                      shaping a better tomorrow.
+                      Embark on a journey to transform {LOCAL_TERMS.KRIO.SALONE}
+                      . Join thousands of community champions, agricultural
+                      innovators, and youth leaders in building a better future
+                      for our nation.
                     </p>
                   </div>
 
                   {/* Mobile CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 pt-4 lg:hidden">
-                    <button className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl text-base sm:text-lg">
-                      Start Your Journey
+                    <button
+                      onClick={() =>
+                        window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")
+                      }
+                      className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl text-base sm:text-lg"
+                    >
+                      Participate
                     </button>
                     <button
                       onClick={openModal}
@@ -137,8 +162,13 @@ const Header = () => {
 
                       {/* CTA Buttons */}
                       <div className="space-y-3 sm:space-y-4 pt-4 pb-4">
-                        <button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 sm:py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base">
-                          Participate Now
+                        <button
+                          onClick={() =>
+                            window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")
+                          }
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 sm:py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+                        >
+                          Participate
                         </button>
                         <button
                           onClick={openModal}
@@ -194,7 +224,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Stats Bar - Bottom of Header */}
-        <div className="lg:hidden absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm border-t border-white/20">
+        <div className="lg:hidden p-5 bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm border-t border-white/20">
           <div className="px-4 py-3">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -202,8 +232,8 @@ const Header = () => {
                 <div className="text-gray-300 text-xs">Participants</div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">120+</div>
-                <div className="text-gray-300 text-xs">Contributions</div>
+                <div className="text-white font-bold text-sm">1K+</div>
+                <div className="text-gray-300 text-xs">Submissions</div>
               </div>
               <div>
                 <div className="text-white font-bold text-sm">95%</div>
@@ -327,7 +357,12 @@ const Header = () => {
                 >
                   Close
                 </button>
-                <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-lg hover:from-blue-700 hover:to-purple-800 transition-all transform hover:scale-105">
+                <button
+                  onClick={() =>
+                    window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")
+                  }
+                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-lg hover:from-blue-700 hover:to-purple-800 transition-all transform hover:scale-105"
+                >
                   Get Inspired & Participate
                 </button>
               </div>

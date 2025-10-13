@@ -4,7 +4,8 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-// Type definitions
+import mockData from "./json/mockData.json";
+
 interface Author {
   name: string;
   likes: number;
@@ -22,108 +23,61 @@ interface ChartSeries {
   data: number[];
 }
 
+interface GenderData {
+  gender: string;
+  count: number;
+  percentage: number;
+}
+
+interface ChartColors {
+  barColors: string[];
+  areaColors: string[];
+  genderColors: string[];
+}
+
+const typedMockData: {
+  authors: Author[];
+  genderParticipation: GenderData[];
+  impactTimeline: ImpactData[];
+  chartColors: ChartColors;
+} = mockData;
+
 const Charts = () => {
-  const authorsData: Author[] = [
-    { name: "J.K. Rowling", likes: 12500000 },
-    { name: "Stephen King", likes: 8900000 },
-    { name: "James Patterson", likes: 7600000 },
-    { name: "Dan Brown", likes: 6800000 },
-    { name: "Nora Roberts", likes: 5400000 },
-    { name: "John Grisham", likes: 4900000 },
-    { name: "George R.R. Martin", likes: 4200000 },
-    { name: "Rick Riordan", likes: 3800000 },
-  ];
+  const authorsData: Author[] = typedMockData.authors;
+  const genderParticipation: GenderData[] = typedMockData.genderParticipation;
 
-  // Impact over time data (campaign timeline)
-  const impactTimeline: ImpactData[] = [
-    { month: "Jan", engagement: 4000, reach: 12000, conversions: 800 },
-    { month: "Feb", engagement: 8000, reach: 25000, conversions: 1500 },
-    { month: "Mar", engagement: 12000, reach: 45000, conversions: 2800 },
-    { month: "Apr", engagement: 18000, reach: 75000, conversions: 4200 },
-    { month: "May", engagement: 25000, reach: 110000, conversions: 6500 },
-    { month: "Jun", engagement: 35000, reach: 165000, conversions: 9200 },
-    { month: "Jul", engagement: 48000, reach: 220000, conversions: 12500 },
-    { month: "Aug", engagement: 62000, reach: 285000, conversions: 16800 },
-    { month: "Sep", engagement: 78000, reach: 350000, conversions: 21000 },
-    { month: "Oct", engagement: 95000, reach: 420000, conversions: 25800 },
-    { month: "Nov", engagement: 115000, reach: 500000, conversions: 31200 },
-    { month: "Dec", engagement: 135000, reach: 580000, conversions: 37500 },
-  ];
+  const barColors: string[] = typedMockData.chartColors.barColors;
+  const genderColors: string[] = typedMockData.chartColors.genderColors;
 
-  // Format numbers for better readability
-  const formatNumber = (num: number): string => {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1) + "M";
-    } else if (num >= 1000) {
-      return (num / 1000).toFixed(1) + "K";
-    }
-    return num.toString();
-  };
-
-  // Different colors for charts
-  const barColors: string[] = [
-    "#3b82f6",
-    "#ef4444",
-    "#10b981",
-    "#f59e0b",
-    "#8b5cf6",
-    "#ec4899",
-    "#06b6d4",
-    "#84cc16",
-  ];
-
-  const areaColors: string[] = ["#3b82f6", "#10b981", "#8b5cf6"];
-
-  // Area Chart Configuration for Impact Measurement
-  const areaChartOptions: ApexCharts.ApexOptions = {
+  const pieChartOptions: ApexCharts.ApexOptions = {
     chart: {
-      type: "area",
-      height: 350,
+      type: "pie",
+      height: 400,
       toolbar: {
         show: true,
         tools: {
           download: true,
-          selection: true,
-          zoom: true,
-          zoomin: true,
-          zoomout: true,
-          pan: true,
-          reset: true,
+          selection: false,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: false,
         },
       },
       animations: {
         enabled: true,
-
         speed: 800,
         animateGradually: {
           enabled: true,
           delay: 150,
         },
-        dynamicAnimation: {
-          enabled: true,
-          speed: 350,
-        },
       },
     },
-    colors: areaColors,
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-      width: 3,
-    },
-    fill: {
-      type: "gradient",
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.7,
-        opacityTo: 0.3,
-        stops: [0, 90, 100],
-      },
-    },
+    colors: genderColors,
+    labels: genderParticipation.map((data) => data.gender),
     title: {
-      text: "Campaign Impact Over Time",
+      text: "Participation by Gender",
       align: "center",
       style: {
         fontSize: "18px",
@@ -131,100 +85,78 @@ const Charts = () => {
         color: "#1f2937",
       },
     },
-    xaxis: {
-      categories: impactTimeline.map((data) => data.month),
-      title: {
-        text: "Campaign Timeline",
-        style: {
-          fontSize: "14px",
-          fontWeight: 600,
-          color: "#6b7280",
-        },
-      },
-      axisBorder: {
-        show: true,
-        color: "#e5e7eb",
-      },
-      axisTicks: {
-        show: true,
-        color: "#e5e7eb",
+    legend: {
+      position: "bottom",
+      horizontalAlign: "center",
+      fontSize: "14px",
+      fontWeight: 500,
+      itemMargin: {
+        horizontal: 10,
+        vertical: 5,
       },
     },
-    yaxis: {
-      title: {
-        text: "Engagement Metrics",
-        style: {
-          fontSize: "14px",
-          fontWeight: 600,
-          color: "#6b7280",
-        },
+    dataLabels: {
+      enabled: true,
+      style: {
+        fontSize: "14px",
+        fontWeight: "bold",
       },
-      labels: {
-        formatter: function (value: number) {
-          return formatNumber(value);
-        },
+      dropShadow: {
+        enabled: false,
       },
-    },
-    grid: {
-      borderColor: "#f3f4f6",
-      strokeDashArray: 4,
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
+      formatter: function (val: number, opts) {
+        return opts.w.config.series[opts.seriesIndex] + "%";
       },
     },
     tooltip: {
-      theme: "light",
-      x: {
-        show: true,
-      },
+      enabled: true,
       y: {
         formatter: function (
           value: number,
           { seriesIndex }: { seriesIndex: number }
         ) {
-          const metrics = ["Engagement", "Reach", "Conversions"];
-          return `${metrics[seriesIndex]}: ${value.toLocaleString()}`;
+          const gender = genderParticipation[seriesIndex];
+          return `
+            <div style="padding: 8px;">
+              <strong>${gender.gender}</strong><br/>
+              Participants: ${gender.count.toLocaleString()}<br/>
+              Percentage: ${gender.percentage}%
+            </div>
+          `;
         },
       },
     },
-    legend: {
-      position: "top",
-      horizontalAlign: "center",
-      fontSize: "14px",
-      fontWeight: 600,
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "45%",
+        },
+        expandOnClick: true,
+        dataLabels: {
+          offset: 20,
+          minAngleToShowLabel: 10,
+        },
+      },
     },
     responsive: [
       {
         breakpoint: 768,
         options: {
           chart: {
-            height: 300,
+            height: 350,
           },
           legend: {
             position: "bottom",
+            horizontalAlign: "center",
           },
         },
       },
     ],
   };
 
-  const areaChartSeries: ChartSeries[] = [
-    {
-      name: "Engagement",
-      data: impactTimeline.map((data) => data.engagement),
-    },
-    {
-      name: "Reach",
-      data: impactTimeline.map((data) => data.reach),
-    },
-    {
-      name: "Conversions",
-      data: impactTimeline.map((data) => data.conversions),
-    },
-  ];
+  const pieChartSeries: number[] = genderParticipation.map(
+    (data) => data.percentage
+  );
 
   const barChartOptions: ApexCharts.ApexOptions = {
     chart: {
@@ -296,17 +228,17 @@ const Charts = () => {
 
   return (
     <div className="space-y-8">
-      {/* Impact Area Chart - Full Width Row */}
+      {/* Pie Chart for Gender Participation - Full Width Row */}
       <div>
         <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
           <Chart
-            options={areaChartOptions}
-            series={areaChartSeries}
-            type="area"
+            options={pieChartOptions}
+            series={pieChartSeries}
+            type="pie"
             height={400}
           />
           <div className="mt-4 text-center text-sm text-gray-600">
-            <p>Tracking campaign performance metrics over a 12-month period</p>
+            <p>Gender distribution of campaign participants</p>
           </div>
         </div>
       </div>
@@ -326,7 +258,7 @@ const Charts = () => {
       {/* Data Table - Full Width Row */}
       <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-semibold mb-6 text-center text-gray-800">
-          Author Likes Data
+          Participants by Author - Facebook Likes Breakdown
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
@@ -385,14 +317,6 @@ const Charts = () => {
                   </tr>
                 );
               })}
-              {/* Total Row */}
-              <tr className="bg-gray-50 font-semibold">
-                <td className="py-3 px-4 text-gray-900">Total</td>
-                <td className="py-3 px-4 text-right text-gray-900">
-                  {totalLikes.toLocaleString()}
-                </td>
-                <td className="py-3 px-4 text-right text-gray-900">100%</td>
-              </tr>
             </tbody>
           </table>
         </div>

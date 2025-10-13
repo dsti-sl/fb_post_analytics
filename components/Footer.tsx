@@ -6,27 +6,13 @@ import {
   MessageCircle,
   TrendingUp,
   Facebook,
-  Twitter,
-  Instagram,
-  Mail,
-  ExternalLink,
 } from "lucide-react";
+import { PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: "Campaign Details", href: "#" },
-    { name: "Submission Guidelines", href: "#" },
-    { name: "Success Stories", href: "#" },
-    { name: "Community Guidelines", href: "#" },
-  ];
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-  ];
+  const socialLinks = [{ name: "Facebook", icon: Facebook, href: "#" }];
 
   const stats = [
     { icon: Users, label: "Participants", value: "2.5K+" },
@@ -48,7 +34,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  Impact Quest
+                  {PLATFORM_CONFIG.NAME}
                 </h3>
                 <p className="text-sm text-gray-400">Community Challenge</p>
               </div>
@@ -76,62 +62,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
+          {/* Social & CTA Section */}
+          <div className="space-y-6">
+            {/* Social Links */}
+            <div>
+              <p className="text-sm text-gray-400 mb-3">Follow the campaign</p>
+              <div className="flex space-x-3">
+                {socialLinks.map((social, index) => (
                   <a
-                    href={link.href}
-                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                    key={index}
+                    href={social.href}
+                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 group"
+                    aria-label={social.name}
                   >
-                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{link.name}</span>
+                    <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white" />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Social */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              Get Involved
-            </h4>
-            <div className="space-y-4">
-              {/* Email */}
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span>contact@kushfreefuture.org</span>
+                ))}
               </div>
-
-              {/* Social Links */}
-              <div className="pt-4">
-                <p className="text-sm text-gray-400 mb-3">
-                  Follow the campaign
-                </p>
-                <div className="flex space-x-3">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 group"
-                      aria-label={social.name}
-                    >
-                      <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA Button - Link to CM's official facebook page*/}
-              <button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg mt-6">
-                Join the Movement
-              </button>
             </div>
+
+            {/* CTA Button - Link to CM's official facebook page*/}
+            <button
+              onClick={() => window.open(SOCIAL_LINKS.FACEBOOK.URL, "_blank")}
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Join the Campaign
+            </button>
           </div>
         </div>
 
@@ -140,34 +96,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-gray-400">
-                © {currentYear} Impact Quest - Community Challenge. All rights
-                reserved.
+                © {currentYear} {PLATFORM_CONFIG.NAME} - Community Challenge.
+                All rights reserved.
               </p>
               <p className="text-gray-500 text-sm mt-1">
                 Data analyzed from community submissions and social engagement
               </p>
-            </div>
-
-            {/* Additional Links */}
-            <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Contact
-              </a>
             </div>
           </div>
         </div>
