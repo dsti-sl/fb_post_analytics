@@ -215,7 +215,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Top Authors - Facebook Reactions Comparison",
+      text: "Facebook Reactions Comparison",
       align: "center",
       style: {
         fontSize: "18px",
@@ -285,7 +285,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Top Authors - Facebook Comments Comparison",
+      text: "Facebook Comments Comparison",
       align: "center",
       style: {
         fontSize: "18px",
@@ -353,7 +353,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Top Authors - Engagement Score (Normalized 0–1)",
+      text: "Engagement Score",
       align: "center",
       style: {
         fontSize: "18px",
