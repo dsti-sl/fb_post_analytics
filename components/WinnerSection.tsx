@@ -14,10 +14,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getAssetPath } from "@/lib/utils";
 
 const winnerSlides = [
   {
-    image: "/profiles/mohamed.jpg",
+    image: getAssetPath("/profiles/mohamed.jpg"),
     name: "Mohamed Turay",
     title: "Winner",
     stats: {
@@ -31,7 +32,7 @@ const winnerSlides = [
     isWinner: true,
   },
   {
-    image: "/profiles/jaden.jpg",
+    image: getAssetPath("/profiles/jaden.jpg"),
     name: "Jaden Ken",
     title: "Runner Up",
     stats: {
@@ -45,7 +46,7 @@ const winnerSlides = [
     isWinner: false,
   },
   {
-    image: "/profiles/samuel.jpg",
+    image: getAssetPath("/profiles/samuel.jpg"),
     name: "Samuel Saio",
     title: "Runner Up",
     stats: {
@@ -219,9 +220,9 @@ export default function WinnerSection() {
                 style={{
                   backgroundColor: winnerSlides[currentSlide].overlayColor,
                   backgroundImage: `
-                    linear-gradient(135deg, 
-                      rgba(32, 34, 61, 0.9) 0%, 
-                      rgba(32, 34, 61, 0.6) 50%, 
+                    linear-gradient(135deg,
+                      rgba(32, 34, 61, 0.9) 0%,
+                      rgba(32, 34, 61, 0.6) 50%,
                       rgba(32, 34, 61, 0.3) 100%
                     )
                   `,
