@@ -31,8 +31,6 @@ interface StatCardData {
   onClick?: () => void;
 }
 
-interface StatCardProps extends StatCardData { }
-
 const iconMap = {
   likes: <ThumbsUp className="w-5 h-5" />,
   followers: <Users className="w-5 h-5" />,
@@ -58,7 +56,7 @@ export default function StatCard({
   currency = "$",
   size = "md",
   onClick,
-}: StatCardProps) {
+}: StatCardData) {
   const getAutoIcon = () => {
     const lowerLabel = label.toLowerCase();
     if (lowerLabel.includes("like")) return iconMap.likes;
