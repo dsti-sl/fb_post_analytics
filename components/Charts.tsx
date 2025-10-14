@@ -46,22 +46,30 @@ const typedMockData: {
   chartColors: ChartColors;
 } = {
   ...mockData,
-  authors_engagement: mockData.engagement_score.map((item: { name: string; data: number }) => ({
-    name: item.name,
-    data: item.data,
-  })),
-  authors_comments: mockData.authors_comments.map((item: { name: string; data: number }) => ({
-    name: item.name,
-    data: item.data,
-  })),
-  authors_impacts: mockData.authors_impacts.map((item: { name: string; data: number }) => ({
-    name: item.name,
-    data: item.data,
-  })),
-  authors_final: mockData.authors_final.map((item: { name: string; data: number }) => ({
-    name: item.name,
-    data: item.data,
-  })),
+  authors_engagement: mockData.engagement_score.map(
+    (item: { name: string; data: number }) => ({
+      name: item.name,
+      data: item.data,
+    })
+  ),
+  authors_comments: mockData.authors_comments.map(
+    (item: { name: string; data: number }) => ({
+      name: item.name,
+      data: item.data,
+    })
+  ),
+  authors_impacts: mockData.authors_impacts.map(
+    (item: { name: string; data: number }) => ({
+      name: item.name,
+      data: item.data,
+    })
+  ),
+  authors_final: mockData.authors_final.map(
+    (item: { name: string; data: number }) => ({
+      name: item.name,
+      data: item.data,
+    })
+  ),
 };
 
 const Charts = () => {
@@ -252,7 +260,6 @@ const Charts = () => {
     0
   );
 
-
   // Participation Comments
   const commentChartOptions: ApexCharts.ApexOptions = {
     chart: {
@@ -423,7 +430,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Impact Score (Normalized 0–1)",
+      text: "Impact Score",
       align: "center",
       style: {
         fontSize: "18px",
@@ -528,10 +535,6 @@ const Charts = () => {
     (sum, author) => sum + author.data,
     0
   );
-
-
-
-
 
   return (
     <div className="space-y-8">
@@ -744,7 +747,10 @@ const Charts = () => {
               </thead>
               <tbody>
                 {authData_final.map((author, index) => {
-                  const percentage: string = ((author.data / totalFinalScore) * 100).toFixed(1);
+                  const percentage: string = (
+                    (author.data / totalFinalScore) *
+                    100
+                  ).toFixed(1);
 
                   return (
                     <tr
@@ -752,7 +758,9 @@ const Charts = () => {
                       className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                     >
                       <td className="py-3 px-4 text-left">
-                        <span className="font-semibold text-gray-900">{index + 1}</span>
+                        <span className="font-semibold text-gray-900">
+                          {index + 1}
+                        </span>
                       </td>
                       <td className="py-3 px-4">
                         <div className="flex items-center">
@@ -760,14 +768,18 @@ const Charts = () => {
                             className="w-3 h-3 rounded-full mr-3"
                             style={{ backgroundColor: barColors[index] }}
                           ></div>
-                          <span className="font-medium text-gray-900">{author.name}</span>
+                          <span className="font-medium text-gray-900">
+                            {author.name}
+                          </span>
                         </div>
                       </td>
                       <td className="py-3 px-4 text-right font-semibold text-gray-900">
                         {author.data.toFixed(2)}
                       </td>
                       <td className="py-3 px-4 text-right">
-                        <span className="font-semibold text-gray-900">{percentage}%</span>
+                        <span className="font-semibold text-gray-900">
+                          {percentage}%
+                        </span>
                       </td>
                     </tr>
                   );
@@ -777,11 +789,6 @@ const Charts = () => {
           </div>
         </div>
       </div>
-
-
-
-
-
     </div>
   );
 };
