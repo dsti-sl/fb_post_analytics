@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { X, Trophy, Star, Heart, MessageCircle, Share2 } from "lucide-react";
-import { LOCAL_TERMS, PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
+import { ACTIVE_CAMPAIGN, LOCAL_TERMS, PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,36 +10,49 @@ const Header = () => {
   const closeModal = () => setIsModalOpen(false);
 
   const winningSubmission = {
-    title: "#KushFreeFuture - A Community's Journey to Wellness",
-    author: "Mohamed Turay",
-    date: "October 13, 2025",
+    title: `${ACTIVE_CAMPAIGN} - How I Would Address Indiscipline in Life and on Social Media`,
+    author: "Christopher Samai",
+    date: "October 24, 2025",
     stats: {
-      likes: "72",
-      comments: "4011",
+      likes: "480",
+      comments: "4,665",
     },
     content: `
-      Futures have been destroyed. The hope of a better Sierra Leone is being shattered. Families are crying, and parents are groaning for the future of their children who have fallen victim to kush. The youth are dying, and their potentials are being wasted.
-Just imagine a situation where your brother with a brighter future loses himself to the deadly intake of kush. His dreams are no longer alive, family members loses hope, and the community begins to fall apart under the effect of addiction. This is exactly what is happening to my brother Ibrahim. He was once full of ambition, I saw him as an inspiration before, now he is struggling to escape the chains of this dangerous drug that has destroyed so many young lives in Sierra Leone today.
-A KUSH FREE FUTURE IN CRAB TONG COMMUNITY, LUMLEY.
-PROBLEM ANALYSIS
-Youths represent 45% of the population of Crab Tong Community, Lumley. Our community has become one of the hardest communities hit by the kush epidemic in Sierra Leone. Kush has rapidly spread among the youth population in Crab Tong Community, causing devastating social, health & economic economic consequences. This community was once known for effective petty trading, schooling, and fishing, now witnessing unemployment and family break downs due to the intake of kush.
-This is due to unemployment, stress, poverty, peer group influence, lack of parental guidance, lack of awareness, etc. And because of kush many youths in Crab Tong Community are suffering from severe mental health disorders, deaths, swollen legs, stigmatization, loss of dignity to name a few. About 50,000 youths have been affected and the community has become a hub for drug trafficking, and social systems of Crab Tong continue to weaken.
-SOLUTION
-The kush crisis in Crab Town demands urgent, collective action. The following solutions outline practical steps toward recovery, empowerment, and a #KushFreeFuture in Crab Tong Community:
-1. REHABILITATION CENTER & KUSH HOTLINE: A sum of $25,000 will be invested in rehabilitation and counseling by establishing a community recovery center for kush addicts with the provision of detox supplies, therapy sessions, and family support programs. And establish a kush hotline alert and rewards for verified tips.
-2. YOUTH EMPOWERMENT & SKILLS TRAINING: We will use $30,000 to launch a six months skills training program like carpentry, tailoring, mechanics, digital literacy, etc. ensuring the proviof starter grants for trained youths to scale what they learn. To ensure the effectiveness of this, we will establish a partnership with local mentors and small businesses.
-3. COMMUNITY AWARENESS RAISING & SENSITIZATION $20,000: A campaign that will be launched to run anti-drug awareness in community schools, radio, churches, mosques, community centers, etc.
-4. ECONOMIC EMPOWERMENT FOR FAMILIES: $15,000 will be used to support the mothers or guardians of affected youth with small business grants to reduce economic pressure that fuels kush intake.
-5. COMMUNITY POLICING & SAFE ZONES: $10,000 will be used to trained community watch groups to report dealers safely and partner with local law enforcement & leaders to establish safe spaces.
-6. MONITORING, EVALUATION, ADMINISTRATION, AND MISCELLANEOUS EXPENSES $10,000.
-With the above solution Dr Moinina David Sengeh, we can absolutely ensure a #KushFreeFuture in Crab Tong Community.
-IMPACT
-This is in alignment with SDG 3, SDG 4, SDG 8, & SDG 10; Aspiration 1,3,4,6, & 7 of Agenda 2063, the Big Five Game Changers, Strategic Objective 2 of the Sierra Leone National Youth Policy, Pillar 3 of the National Drug Control Master Plan.
-The #KushFreeFuture in Crab Tong Community, Lumley will directly impact about 35,000 youths and indirectly benefit over 15,000 people, restoring safety, dignity, and opportunity.
-To Viewers:
-Do you know someone who has fallen victim to Kush? Share that story with me. This is your opportunity.
-______________
-JESUS IS KING
+Indiscipline is something we’ve all seen, sometimes even in ourselves ,whether it’s losing control of our words online, breaking promises to ourselves, or simply neglecting the small acts of respect that hold a society together. It may sound like a harsh word, but at its heart, indiscipline is just the gap between what we know is right and what we actually do.
+In today’s world ,especially in the digital age, that gap has grown wider. The anonymity of social media and the pace of modern life make it easier than ever to react without thinking, to judge without understanding, or to live without a clear sense of self-control. So how do we address it?
+Here are some truth.
+1. Start with Self-Discipline.
+It’s hard to correct others if you haven’t first learned to guide yourself. Self-discipline isn’t about being strict or robotic, it’s about choosing long-term peace over short-term pleasure.
+It begins with small things:
+1.Waking up when you say you will.
+2. Speaking with kindness even when irritated.
+3.Putting the phone down when it’s time to rest or study.
+When you hold yourself accountable, you set a quiet example. People notice even on social media.
+2. Practice Emotional Intelligence Online
+Social media has become a mirror of our society and sometimes, it’s not a flattering one. Indiscipline shows up in the form of insults, impulsive posts, or fake news shared without a second thought.
+To change this, we must learn to pause before we post. Ask yourself:
+Would I say this to someone’s face?
+Does this add kindness, truth, or value?
+Am I reacting, or responding?
+Building digital discipline doesn’t mean silence, it means wisdom.
+3. Be a Role Model, Not a Judge.
+You don’t have to be an influencer to influence. Whether at school, work, or online, people watch how you carry yourself. When you stay calm during chaos, admit mistakes, or show respect in disagreement, you make discipline look admirable, not boring.
+Instead of calling others out publicly, reach out privately. Instead of mocking, mentor. Change doesn’t happen through shame, it happens through empathy and consistency.
+4.Create Boundaries.
+Discipline thrives in clarity.
+Set boundaries for how you spend your time, who you listen to, and what kind of energy you allow into your space.
+1.Limit screen time.
+2.Unfollow negativity.
+3.Dedicate quiet moments each day to reflect or pray.
+Boundaries aren’t walls, they’re filters that keep your values intact in a noisy world.
+5. Encourage Accountability in Your Circle.
+If you want to see less indiscipline in society, start with your circle. Surround yourself with people who challenge you to grow, not those who celebrate chaos. Hold honest conversations about behavior, respect, and the impact of our words.
+Online, this can mean reporting harmful content, promoting positive discussions, and refusing to engage in digital drama. In life, it means having friends who remind you who you are when you forget.
+Addressing indiscipline isn’t about punishment, it’s about nurturing growth. We live in a world that rewards quick reactions, but true strength lies in calm control.
+Whether it’s in life or online, let’s choose discipline not because someone is watching, but because we are watching ourselves.
+That’s how we grow,not just as individuals, but as a more respectful, balanced, and humane community.
+MEDICAL SUPREMO
+David Moinina Sengeh - PhD
     `,
     tags: [
       "Community Engagement",
@@ -191,7 +204,7 @@ JESUS IS KING
                       <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-white/20">
                         <div className="text-center">
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            2K+
+                            1K+
                           </div>
                           <div className="text-xs sm:text-sm text-gray-400">
                             Submissions
@@ -199,7 +212,7 @@ JESUS IS KING
                         </div>
                         <div className="text-center">
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            14K+
+                            16K+
                           </div>
                           <div className="text-xs sm:text-sm text-gray-400">
                             SubComments
@@ -207,7 +220,7 @@ JESUS IS KING
                         </div>
                         <div className="text-center">
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                            4K+
+                            7K+
                           </div>
                           <div className="text-xs sm:text-sm text-gray-400">
                             Reactions
@@ -236,15 +249,15 @@ JESUS IS KING
           <div className="px-4 py-3">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-white font-bold text-sm">2K+</div>
+                <div className="text-white font-bold text-sm">1K+</div>
                 <div className="text-gray-300 text-xs">Submissions</div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">14K+</div>
+                <div className="text-white font-bold text-sm">16K+</div>
                 <div className="text-gray-300 text-xs">SubComments</div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">4k+</div>
+                <div className="text-white font-bold text-sm">7K+</div>
                 <div className="text-gray-300 text-xs">Reactions</div>
               </div>
             </div>
@@ -264,7 +277,7 @@ JESUS IS KING
                   <div>
                     <h2 className="text-2xl font-bold">Winning Submission</h2>
                     <p className="text-blue-100">
-                      Grand Prize Winner - #KushFreeFuture Campaign
+                      Grand Prize Winner -  {ACTIVE_CAMPAIGN} Campaign
                     </p>
                   </div>
                 </div>

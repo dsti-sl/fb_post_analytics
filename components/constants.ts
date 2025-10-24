@@ -136,7 +136,7 @@ export const PLATFORM_CONFIG = {
 
 export const CAMPAIGN_TAGLINES = {
   DRUG_ABUSE: {
-    PRIMARY: "#KushFreeFuture",
+    PRIMARY: "#IndisciplineInLife/SocialMedia",
     SECONDARY: "#DrugFreeSalone",
     TERTIARY: "#SafePikinDem",
     ALTERNATIVE: "#CleanFutureSL",

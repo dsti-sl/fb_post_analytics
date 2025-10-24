@@ -186,21 +186,21 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <Cards
                 label="Total Comments"
-                value={16410}
+                value={17000}
                 bgColor="bg-gradient-to-br from-blue-600 to-blue-800"
                 change={37.5}
                 trend="up"
               />
               <Cards
                 label="Total Reactions"
-                value={4500}
+                value={7000}
                 bgColor="bg-gradient-to-br from-green-600 to-green-800"
                 change={8.2}
                 trend="up"
               />
               <Cards
                 label="Sub Comments"
-                value={14290}
+                value={16068}
                 bgColor="bg-gradient-to-br from-purple-600 to-purple-800"
                 change={15.7}
                 trend="up"
@@ -218,22 +218,22 @@ export default function Dashboard() {
               /> */}
               <Cards
                 label="Shares"
-                value={306}
+                value={106}
                 bgColor="bg-gradient-to-br from-cyan-500 to-blue-600"
                 size="sm"
               />
               <Cards
                 label="Unique Users"
-                value={5759}
+                value={2590}
                 bgColor="bg-gradient-to-br from-pink-500 to-rose-600"
                 size="sm"
               />
-              <Cards
+              {/* <Cards
                 label="Campaign Reach"
                 value={198000}
                 bgColor="bg-gradient-to-br from-indigo-500 to-purple-600"
                 size="sm"
-              />
+              /> */}
             </div>
           </div>
         </section>

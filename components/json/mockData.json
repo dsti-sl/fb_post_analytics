@@ -24,40 +24,100 @@
     { "name": "Mohamed Shuaib", "data": 286 }
   ],
   "engagement_score": [
-    { "name": "Mohamed Turay", "data": 0.90 },
-    { "name": "Samuel Saio", "data": 0.56 },
-    { "name": "Jaden Ken", "data": 0.52 }
+    { "name": "Christopher Samai", "data": 37.04 },
+    { "name": "Samuel Saio", "data": 33.33 },
+    { "name": "Alieu Auwal", "data": 29.63 }
   ],
   "authors_impacts": [
-    { "name": "Jaden Ken", "data": 0.09 },
-    { "name": "Mohamed Turay", "data": 0.07 },
-    { "name": "Samuel Saio", "data": 0.05 }
+    { "name": "Christopher Samai", "data": 35.78 },
+    { "name": "Samuel Saio", "data": 31.19 },
+    { "name": "Alieu Auwal", "data": 33.03 }
   ],
   "authors_final": [
-    { "name": "Mohamed Turay", "data": 0.97 },
-    { "name": "Jaden Ken", "data": 0.61 },
-    { "name": "Samuel Saio", "data": 0.61 }
+    { "name": "Christopher Samai", "data": 36.40 },
+    { "name": "Samuel Saio", "data": 32.26 },
+    { "name": "Alieu Auwal", "data": 31.34 }
   ],
   "genderParticipation": [
-    { "gender": "Male", "percentage": 70 },
-    { "gender": "Female", "percentage": 30 }
+    { "gender": "Male", "percentage": 73 },
+    { "gender": "Female", "percentage": 26 },
+    { "gender": "Other", "percentage": 1 }
   ],
   "impactTimeline": [
     { "month": "Jan", "engagement": 4000, "reach": 12000, "conversions": 800 },
     { "month": "Feb", "engagement": 8000, "reach": 25000, "conversions": 1500 },
-    { "month": "Mar", "engagement": 12000, "reach": 45000, "conversions": 2800 },
-    { "month": "Apr", "engagement": 18000, "reach": 75000, "conversions": 4200 },
-    { "month": "May", "engagement": 25000, "reach": 110000, "conversions": 6500 },
-    { "month": "Jun", "engagement": 35000, "reach": 165000, "conversions": 9200 },
-    { "month": "Jul", "engagement": 48000, "reach": 220000, "conversions": 12500 },
-    { "month": "Aug", "engagement": 62000, "reach": 285000, "conversions": 16800 },
-    { "month": "Sep", "engagement": 78000, "reach": 350000, "conversions": 21000 },
-    { "month": "Oct", "engagement": 95000, "reach": 420000, "conversions": 25800 },
-    { "month": "Nov", "engagement": 115000, "reach": 500000, "conversions": 31200 },
-    { "month": "Dec", "engagement": 135000, "reach": 580000, "conversions": 37500 }
+    {
+      "month": "Mar",
+      "engagement": 12000,
+      "reach": 45000,
+      "conversions": 2800
+    },
+    {
+      "month": "Apr",
+      "engagement": 18000,
+      "reach": 75000,
+      "conversions": 4200
+    },
+    {
+      "month": "May",
+      "engagement": 25000,
+      "reach": 110000,
+      "conversions": 6500
+    },
+    {
+      "month": "Jun",
+      "engagement": 35000,
+      "reach": 165000,
+      "conversions": 9200
+    },
+    {
+      "month": "Jul",
+      "engagement": 48000,
+      "reach": 220000,
+      "conversions": 12500
+    },
+    {
+      "month": "Aug",
+      "engagement": 62000,
+      "reach": 285000,
+      "conversions": 16800
+    },
+    {
+      "month": "Sep",
+      "engagement": 78000,
+      "reach": 350000,
+      "conversions": 21000
+    },
+    {
+      "month": "Oct",
+      "engagement": 95000,
+      "reach": 420000,
+      "conversions": 25800
+    },
+    {
+      "month": "Nov",
+      "engagement": 115000,
+      "reach": 500000,
+      "conversions": 31200
+    },
+    {
+      "month": "Dec",
+      "engagement": 135000,
+      "reach": 580000,
+      "conversions": 37500
+    }
   ],
   "chartColors": {
-    "barColors": ["#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899", "#06b6d4", "#84cc16"],
+    "barColors": [
+      "#3b82f6",
+      "#ef4444",
+      "#10b981",
+      "#f59e0b",
+      "#8b5cf6",
+      "#ec4899",
+      "#06b6d4",
+      "#84cc16"
+    ],
     "areaColors": ["#3b82f6", "#10b981", "#8b5cf6"],
     "genderColors": ["#3b82f6", "#ec4899", "#8b5cf6", "#6b7280"]
   }

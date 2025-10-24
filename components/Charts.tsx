@@ -353,7 +353,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Engagement Score",
+      text: "Engagement Score (%)",
       align: "center",
       style: {
         fontSize: "18px",
@@ -423,7 +423,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Impact Score (Normalized 0–1)",
+      text: "Impact Score (%)",
       align: "center",
       style: {
         fontSize: "18px",
@@ -449,8 +449,8 @@ const Charts = () => {
 
   const impactChartSeries: ChartSeries[] = [
     {
-      name: "Impact Score",
-      data: authData_impact.map((author) => author.data), // normalized 0–1
+      name: "Impact Score (%)",
+      data: authData_impact.map((author) => author.data),
     },
   ];
 
@@ -491,7 +491,7 @@ const Charts = () => {
       },
     },
     title: {
-      text: "Final Score (Normalized 0–1)",
+      text: "Final Score (%)",
       align: "center",
       style: {
         fontSize: "18px",
@@ -528,9 +528,6 @@ const Charts = () => {
     (sum, author) => sum + author.data,
     0
   );
-
-
-
 
 
   return (

@@ -17,44 +17,44 @@ import { useEffect, useState } from "react";
 
 const winnerSlides = [
   {
-    image: "/profiles/mohamed.jpg",
-    name: "Mohamed Turay",
+    image: "/profiles/christopher_samai.jpg",
+    name: "Chrisopher Samai",
     title: "Winner",
     stats: {
-      engagement: "0.90",
-      comments: "4,011",
-      reactions: "72",
-      impact: "0.07"
+      engagement: "0.40",
+      comments: "4,665",
+      reactions: "480",
+      impact: "0.39"
     },
-    achievements: ["0.97 - Final Score"],
+    achievements: ["0.79 - Final Score"],
     overlayColor: "rgba(32, 34, 61, 0.85)",
     isWinner: true,
   },
   {
-    image: "/profiles/jaden.jpg",
-    name: "Jaden Ken",
-    title: "Runner Up",
+    image: "/profiles/samuel_saio.jpg",
+    name: "Samuel Saio",
+    title: "First Runner Up",
     stats: {
-      engagement: "0.52",
-      comments: "397",
-      reactions: "899",
-      impact: "0.09"
+      engagement: "0.36",
+      comments: "4,715",
+      reactions: "316",
+      impact: "0.34"
     },
-    achievements: ["0.61 - Final Score"],
+    achievements: ["0.70 - Final Score"],
     overlayColor: "rgba(139, 92, 246, 0.85)",
     isWinner: false,
   },
   {
-    image: "/profiles/samuel.jpg",
-    name: "Samuel Saio",
-    title: "Runner Up",
+    image: "/profiles/alieu_auwal.jpg",
+    name: "Alieu Auwal",
+    title: "Second Runner Up",
     stats: {
-      engagement: "0.56",
-      comments: "1,125",
-      reactions: "654",
-      impact: "0.05"
+      engagement: "0.32",
+      comments: "4,916",
+      reactions: "316",
+      impact: "0.36"
     },
-    achievements: ["0.61 - Final Score"],
+    achievements: ["0.68 - Final Score"],
     overlayColor: "rgba(59, 130, 246, 0.85)",
     isWinner: false,
   },
