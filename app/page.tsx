@@ -119,7 +119,8 @@ export default function Dashboard() {
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Open discussions from the community, replies and sub-comments.
+                            Open discussions from the community, replies and
+                            sub-comments.
                           </p>
                         </div>
 
@@ -131,7 +132,8 @@ export default function Dashboard() {
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Likes, love, and other reactions to gauge popularity.
+                            Likes, love, and other reactions to gauge people's
+                            thoughts.
                           </p>
                         </div>
 
@@ -143,7 +145,7 @@ export default function Dashboard() {
                             </h4>
                           </div>
                           <p className="text-sm text-gray-600">
-                            Deliberation on impact .
+                            Deliberation on impact.
                           </p>
                         </div>
                       </div>
@@ -156,7 +158,10 @@ export default function Dashboard() {
                               Evaluation Criteria
                             </h4>
                             <p className="text-sm text-gray-600">
-                              Winners are selected based on post engagements (Comments, Reactions) and impact (SDG Alignment, Innovation, Feasibility, Sustainability, National Development).
+                              Winners are selected based on post engagements
+                              (Comments, Reactions) and impact (SDG Alignment,
+                              Innovation, Feasibility, Sustainability, National
+                              Development).
                             </p>
                           </div>
                         </div>

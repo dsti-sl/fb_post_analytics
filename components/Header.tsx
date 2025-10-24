@@ -71,7 +71,7 @@ David Moinina Sengeh - PhD
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
             style={{
-              backgroundImage: 'url("/images/header.jpg")',
+              backgroundImage: `url("${getAssetPath("/images/header.jpg")}")`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 lg:from-black/80 lg:via-black/50 lg:to-transparent" />
