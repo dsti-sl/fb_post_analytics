@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { X, Trophy, Star, Heart, MessageCircle, Share2 } from "lucide-react";
 import { ACTIVE_CAMPAIGN, LOCAL_TERMS, PLATFORM_CONFIG, SOCIAL_LINKS } from "./constants";
+import { getAssetPath } from "@/lib/utils";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,7 +72,7 @@ David Moinina Sengeh - PhD
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
             style={{
-              backgroundImage: 'url("/images/header.jpg")',
+              backgroundImage: `url("${getAssetPath("/images/header.jpg")}")`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 lg:from-black/80 lg:via-black/50 lg:to-transparent" />

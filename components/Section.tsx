@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
+import { getAssetPath } from "@/lib/utils";
 
 interface SectionProps {
   title?: string;
@@ -159,7 +160,7 @@ const Section: React.FC<SectionProps> = ({
               `}
             >
               <img
-                src={imageSrc}
+                src={imageSrc.startsWith('http') ? imageSrc : getAssetPath(imageSrc)}
                 alt={imageAlt}
                 className="w-full h-auto object-cover transition-all duration-500 hover:scale-105 hover:grayscale-0"
                 loading="lazy"
