@@ -180,13 +180,13 @@ export default function Dashboard() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                Campaign Performance
+                Performance
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Key metrics showing the overall impact and engagement of the
                 #IndisciplineInLife/SocialMedia Competition
               </p>
-              <p>The competition started on the 15<sup>th</sup> October, 2025 and lasted for one week (22<sup>nd</sup> October, 2025). </p>
+              <p className="text-gray-600 max-w-2xl mx-auto">The competition started on the 15<sup>th</sup> October, 2025 and lasted for one week (22<sup>nd</sup> October, 2025). </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
