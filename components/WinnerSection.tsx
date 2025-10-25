@@ -18,7 +18,7 @@ import { getAssetPath } from "@/lib/utils";
 
 const winnerSlides = [
   {
-    image: "/profiles/christopher_samai.jpg",
+    image: getAssetPath("/profiles/christopher_samai.jpg"),
     name: "Chrisopher Samai",
     title: "Winner",
     stats: {
@@ -32,7 +32,7 @@ const winnerSlides = [
     isWinner: true,
   },
   {
-    image: "/profiles/samuel_saio.jpg",
+    image: getAssetPath("/profiles/samuel_saio.jpg"),
     name: "Samuel Saio",
     title: "First Runner Up",
     stats: {
@@ -46,7 +46,7 @@ const winnerSlides = [
     isWinner: false,
   },
   {
-    image: "/profiles/alieu_auwal.jpg",
+    image: getAssetPath("/profiles/alieu_auwal.jpg"),
     name: "Alieu Auwal",
     title: "Second Runner Up",
     stats: {
