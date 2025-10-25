@@ -158,10 +158,10 @@ export default function Dashboard() {
                               Evaluation Criteria
                             </h4>
                             <p className="text-sm text-gray-600">
-                              Winners are selected based on post engagements
-                              (Comments, Reactions) and impact (SDG Alignment,
-                              Innovation, Feasibility, Sustainability, National
-                              Development).
+                              The competition started on the 15<sup>th</sup> October, 2025 and lasted for one week (22<sup>nd</sup> October, 2025).
+                              <br /><br />
+                              Winners are selected based on Impact
+                              and Engagement (Comments, Reactions).
                             </p>
                           </div>
                         </div>
@@ -186,7 +186,6 @@ export default function Dashboard() {
                 Key metrics showing the overall impact and engagement of the
                 #IndisciplineInLife/SocialMedia Competition
               </p>
-              <p className="text-gray-600 max-w-2xl mx-auto">The competition started on the 15<sup>th</sup> October, 2025 and lasted for one week (22<sup>nd</sup> October, 2025). </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
