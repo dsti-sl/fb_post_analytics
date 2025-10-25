@@ -158,10 +158,10 @@ export default function Dashboard() {
                               Evaluation Criteria
                             </h4>
                             <p className="text-sm text-gray-600">
-                              Winners are selected based on post engagements
-                              (Comments, Reactions) and impact (SDG Alignment,
-                              Innovation, Feasibility, Sustainability, National
-                              Development).
+                              The competition started on the 15<sup>th</sup> October, 2025 and lasted for one week (22<sup>nd</sup> October, 2025).
+                              <br /><br />
+                              Winners are selected based on Impact
+                              and Engagement (Comments, Reactions).
                             </p>
                           </div>
                         </div>
@@ -180,11 +180,11 @@ export default function Dashboard() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                Campaign Performance
+                Performance
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Key metrics showing the overall impact and engagement of the
-                #KushFreeFuture campaign
+                #IndisciplineInLife/SocialMedia Competition
               </p>
             </div>
 
